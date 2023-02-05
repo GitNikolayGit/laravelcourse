@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('defects', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
+            $table->integer('price');
             $table->timestamps();
         });
     }

@@ -10,6 +10,8 @@ class Servise extends Model
     use HasFactory;
     protected $fillable = [
         'title',
+        'time',
+        'price',
         'defect_id'
     ];
     // связь с ремонтом

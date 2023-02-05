@@ -15,7 +15,7 @@ class Repair extends Model
         'car_id',
         'worker_id',
         'client_id',
-        'Park_id',
+        'park_id',
         //'datestart' ,         // поставка на ремонт
         'datereturn',        // дата возврата
     ];

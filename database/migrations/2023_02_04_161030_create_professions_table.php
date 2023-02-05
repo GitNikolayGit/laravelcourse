@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('professions', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->integer('defect_id');
+            $table->integer('defect_id')->nullable();
             $table->timestamps();
         });
     }

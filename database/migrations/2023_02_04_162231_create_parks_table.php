@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('parks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->integer('defect_id');
+            $table->integer('price');
             $table->timestamps();
         });
     }

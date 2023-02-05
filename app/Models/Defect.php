@@ -15,11 +15,7 @@ class Defect extends Model
     public function car(){
         return $this->hasMany(Car::class);
     }
-    // связь с запчастью
-    public function park(){
-        return $this->hasMany(Park::class);
-    }
-    // связь с запчастью
+    // связь с профессией
     public function profession(){
         return $this->hasMany(Profession::class);
     }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [CarController::class, 'index'] );
-
+// редакция машины
 Route::get('/car/edit/{id}', [CarController::class, 'edit']);
 Route::post('car/edit/{id}', [CarController::class, 'edit_res']);
-
-Route::get('/car/update', [CarController::class, 'edit'])->name('car-update');
 // добавление цвета
 Route::post('/car/add_color', [CarController::class, 'add_color']);
 
-Route::get('/car/sort_brand', [CarController::class, 'sort_brand']);
+Route::get('/client', [ClientController::class, 'index']);

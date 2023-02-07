@@ -259,10 +259,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('brands')->insert([
-            ['title'=>'Audi '],['title'=>'Cadillac '], ['title'=>'Bentley '],
-            ['title'=>'Chevrolet '], ['title'=>'Citroen '], ['title'=>'Ferrari '],
-            ['title'=>'Fiat '], ['title'=>'Honda '],
-            ['title'=>'Ford '], ['title'=>'Lada '],
+            ['title'=>'Audi'],['title'=>'Cadillac'], ['title'=>'Bentley'],
+            ['title'=>'Chevrolet'], ['title'=>'Citroen'], ['title'=>'Ferrari'],
+            ['title'=>'Fiat'], ['title'=>'Honda'],
+            ['title'=>'Ford'], ['title'=>'Lada'],
         ]);
 
         DB::table('modelcars')->insert([
@@ -291,7 +291,6 @@ class DatabaseSeeder extends Seeder
                 'surname'=>'Иванов',
                 'firstName'=>'Иван',
                 'patronymic'=>'Иванович',
-                //'brand_id'=>0,
                 'modelcar_id'=>1,
                 'color_id'=>2,
                 'defect_id'=>1,
@@ -313,7 +312,6 @@ class DatabaseSeeder extends Seeder
                 'surname'=>'Сидоров',
                 'firstName'=>'Сидор',
                 'patronymic'=>'Сидорович',
-                //'brand_id'=>3,
                 'modelcar_id'=>3,
                 'color_id'=>7,
                 'defect_id'=>1,
@@ -324,7 +322,6 @@ class DatabaseSeeder extends Seeder
                 'surname'=>'Лашманов',
                 'firstName'=>'Иван',
                 'patronymic'=>'Владимирович',
-                //'brand_id'=>4,
                 'modelcar_id'=>4,
                 'color_id'=>12,
                 'defect_id'=>2,
@@ -335,7 +332,6 @@ class DatabaseSeeder extends Seeder
                 'surname'=>'Мазурчак',
                 'firstName'=>'Александр',
                 'patronymic'=>'Иванович',
-                //'brand_id'=>9,
                 'modelcar_id'=>15,
                 'color_id'=>11,
                 'defect_id'=>3,
@@ -346,7 +342,6 @@ class DatabaseSeeder extends Seeder
                 'surname'=>'Лабузов',
                 'firstName'=>'Дмитрий',
                 'patronymic'=>'Васильевич',
-                //'brand_id'=>9,
                 'modelcar_id'=>12,
                 'color_id'=>9,
                 'defect_id'=>4,
@@ -357,7 +352,6 @@ class DatabaseSeeder extends Seeder
                 'surname'=>'Лабузов',
                 'firstName'=>'Михаил',
                 'patronymic'=>'Васильевич',
-                //'brand_id'=>9,
                 'modelcar_id'=>15,
                 'color_id'=>9,
                 'defect_id'=>5,

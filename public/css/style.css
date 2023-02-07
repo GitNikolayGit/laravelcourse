@@ -3,7 +3,7 @@ h1, h2, h6 {
 }
 
 main {
-    min-height: 580px;
+    min-height: 550px;
 }
 
 
@@ -15,7 +15,7 @@ table {
     width: 100%;
     display: block;
     overflow-y: auto;
-    max-height: 500px;
+    max-height: 530px;
     margin-bottom: 5px;
     border: 15px solid #F2F8F8;
     border-top: 5px solid #F2F8F8;

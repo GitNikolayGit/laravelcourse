@@ -13,41 +13,44 @@
 
 <body >
 <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
+    <div class="container-fluid"  >
+        @include('inc.messages')
+
 
     </div>
 </nav>
 <main class="col-sm p-1" >
-    <div class="container-fluid" >
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-2 p-1 bg-light ">
-                <div class="  m-1" style="height: 320px">
-                </div>
+            <div class="col-3 p-1 bg-light ">
+                @yield('content')
             </div>
-            <div class="col-sm-10 bg-light">
+            <div class="col-sm-9 bg-light">
                 @yield('content2')
             </div>
         </div>
     </div>
 
+
+    <div>
+        <a class="btn btn btn btn-outline-secondary m-3" href="/" >Машины</a>
+        <a class="btn btn btn btn-outline-secondary m-3" href="/car" >Машины</a>
+        <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">найти</button>
+        <ul class="dropdown-menu" style="width:195px">
+            <li><a class="dropdown-item" id="startArr">исходный массива </a></li>
+            <li><a class="dropdown-item" id="sortCity">по пунктам назначения</a></li>
+            <li><a class="dropdown-item" id="sortPrice">по стоимости</a></li>
+            <li><a class="dropdown-item" id="sortNumber">по номеру рейса</a></li>
+        </ul>
+        <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">выделить</button>
+        <ul class="dropdown-menu" style="width:250px">
+            <li><a class="dropdown-item" id="selectPrice">со стоимостью выше значения</a></li>
+            <li><a class="dropdown-item" id="selectCity">по пункту назначения</a></li>
+            <li><a class="dropdown-item" id="selectNumber">по номеру рейса</a></li>
+        </ul>
+    </div>
 </main>
-<div>
-    <a class="btn btn btn btn-outline-secondary m-3" href="/car" >Машины</a>
-    <a class="btn btn btn btn-outline-secondary m-3" href="/car" >Машины</a>
-    <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">найти</button>
-    <ul class="dropdown-menu" style="width:195px">
-        <li><a class="dropdown-item" id="startArr">исходный массива </a></li>
-        <li><a class="dropdown-item" id="sortCity">по пунктам назначения</a></li>
-        <li><a class="dropdown-item" id="sortPrice">по стоимости</a></li>
-        <li><a class="dropdown-item" id="sortNumber">по номеру рейса</a></li>
-    </ul>
-    <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">выделить</button>
-    <ul class="dropdown-menu" style="width:250px">
-        <li><a class="dropdown-item" id="selectPrice">со стоимостью выше значения</a></li>
-        <li><a class="dropdown-item" id="selectCity">по пункту назначения</a></li>
-        <li><a class="dropdown-item" id="selectNumber">по номеру рейса</a></li>
-    </ul>
-</div>
+
 </body>
 
 </html>

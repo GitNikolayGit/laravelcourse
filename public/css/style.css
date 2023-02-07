@@ -3,8 +3,9 @@ h1, h2, h6 {
 }
 
 main {
-    min-height: 550px;
+    min-height: 580px;
 }
+
 
 img {
     height: 350px;
@@ -12,6 +13,9 @@ img {
 
 table {
     width: 100%;
+    display: block;
+    overflow-y: auto;
+    max-height: 500px;
     margin-bottom: 5px;
     border: 15px solid #F2F8F8;
     border-top: 5px solid #F2F8F8;
@@ -30,12 +34,11 @@ table td {
     border-bottom: 5px solid #F2F8F8;
 }
 
-button {
-    width: 150px;
-}
+
 
 
 /* закругленные углы */
+
 .table {
     width: 100%;
     border: none;
@@ -82,8 +85,3 @@ button {
 .table tbody tr:last-child td:last-child {
     border-radius: 0 0 20px 0;
 }
-
-
-
-
-

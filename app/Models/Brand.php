@@ -11,8 +11,8 @@ class Brand extends Model
     protected $fillable = [
         'title',
     ];
-    // связь с машиной
-    public function car(){
-        return $this->hasMany(Car::class);
+    // связь с моделью
+    public function modelcar(){
+        return $this->hasMany(Modelcar::class);
     }
 }

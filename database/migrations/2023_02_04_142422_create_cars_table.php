@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('surname');         // владелец
             $table->string('firstName');
             $table->string('patronymic');
-            $table->integer('brand_id');       // марка
-            $table->integer('modelCar_id');    // модель
+            //$table->integer('brand_id');       // марка
+            $table->integer('modelcar_id');    // модель
             $table->integer('color_id');       // цвет
-            $table->integer('defect_id');      // неисправность
+            $table->integer('defect_id')->nullable();      // неисправность
             $table->timestamps();
         });
     }

@@ -19,4 +19,7 @@ class Defect extends Model
     public function profession(){
         return $this->hasMany(Profession::class);
     }
+    public function service(){
+        return $this->hasMany(Service::class);
+    }
 }

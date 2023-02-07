@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Servise;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class ServiseController extends Controller
@@ -41,10 +41,10 @@ class ServiseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Servise  $servise
+     * @param  \App\Models\Service  $servise
      * @return \Illuminate\Http\Response
      */
-    public function show(Servise $servise)
+    public function show(Service $servise)
     {
         //
     }
@@ -52,10 +52,10 @@ class ServiseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Servise  $servise
+     * @param  \App\Models\Service  $servise
      * @return \Illuminate\Http\Response
      */
-    public function edit(Servise $servise)
+    public function edit(Service $servise)
     {
         //
     }
@@ -64,10 +64,10 @@ class ServiseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Servise  $servise
+     * @param  \App\Models\Service  $servise
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Servise $servise)
+    public function update(Request $request, Service $servise)
     {
         //
     }
@@ -75,10 +75,10 @@ class ServiseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Servise  $servise
+     * @param  \App\Models\Service  $servise
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Servise $servise)
+    public function destroy(Service $servise)
     {
         //
     }

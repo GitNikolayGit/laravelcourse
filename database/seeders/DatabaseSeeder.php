@@ -30,214 +30,214 @@ class DatabaseSeeder extends Seeder
                 'title'=>'Замена тормозного шланга',
                 'time'=>0.15,
                 'price'=>800,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             [
                 'title'=>'Замена тормозных дисков',
                 'time'=>0.33,
                 'price'=>1200,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             [//12
                 'title'=>'Замена тормозной жидкости',
                 'time'=>0.3,
                 'price'=>1200,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             [//13
                 'title'=>'Замена передних тормозных колодок',
                 'time'=>0.25,
                 'price'=>700,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             ['title'=>'Обслуживание тормозных механизмов',
                 'time'=>0.5,
                 'price'=>250,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             ['title'=>'Замена троса ручного тормоза',//14
                 'time'=>0.3,
                 'price'=>1500,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             ['title'=>'Регулировка ручного тормоза',
                 'time'=>0.25,
                 'price'=>300,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             // 2 электрооборудование
             ['title'=>'Замена генератора',  // 15
                 'time'=>0.25,
                 'price'=>1500,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Замена стартера',  // 16
                 'time'=>0.25,
                 'price'=>1500,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Замена высоковольтных проводов',//17
                 'time'=>0.3,
                 'price'=>400,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Замена свечей зажигания',//19
                 'time'=>0.15,
                 'price'=>600,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Замена катушки зажигания',//18
                 'time'=>0.1,
                 'price'=>200,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Замена реостата печки',//20
                 'time'=>0.3,
                 'price'=>1500,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Замена электромотора стеклоподъемника',
                 'time'=>0.4,
                 'price'=>1500,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Заменить реле поворотов',
                 'time'=>0.15,
                 'price'=>500,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Замена лампочки без снятия фары',
                 'time'=>0.1,
                 'price'=>250,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Снять и установить реле включения стартера',
                 'time'=>0.22,
                 'price'=>500,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             ['title'=>'Снять и установить стартер',
                 'time'=>0.25,
                 'price'=>1500,
-                'defect_id'=>2
+                'defect_id'=>3
             ],
             //3 ходовая
             ['title'=>'Демонтаж-монтаж поворотного кулака',
                 'time'=>0.4,
                 'price'=>2000,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             ['title'=>'Демонтаж-монтаж  передней стойки амортизатора',
                 'time'=>0.35,
                 'price'=>1500,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             ['title'=>'Замена  рычага продольного задней подвески',
                 'time'=>0.33,
                 'price'=>3000,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             ['title'=>'Замена ступицы переднего колеса',
                 'time'=>0.25,
                 'price'=>1500,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             ['title'=>'Замена подрамника передней подвески',
                 'time'=>0.56,
                 'price'=>3000,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             ['title'=>'Замена ступицы заднего колеса',
                 'time'=>0.33,
                 'price'=>1500,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             ['title'=>'Демонтаж-монтаж тормозного диска',
                 'time'=>0.42,
                 'price'=>1200,
-                'defect_id'=>4
+                'defect_id'=>5
             ],
             // 4 двигатель
             ['title'=>'снять двигатель / поставить двигатель',
                 'time'=>2.6,
                 'price'=>20000,
-                'defect_id'=>0
+                'defect_id'=>1
             ],
             ['title'=>'Капитальный ремонт двигателя (без запчастей)',
                 'time'=>24,
                 'price'=>35000,
-                'defect_id'=>0
+                'defect_id'=>1
             ],
             ['title'=>'Замена головки блока цилиндров',
                 'time'=>1.3,
                 'price'=>1200,
-                'defect_id'=>0
+                'defect_id'=>1
             ],
             ['title'=>'Обработка  седла клапана за 1 шт',
                 'time'=>0.18,
                 'price'=>300,
-                'defect_id'=>0
+                'defect_id'=>1
             ],
             ['title'=>'Замена сальника коленчатого вала',
                 'time'=>0.25,
                 'price'=>500,
-                'defect_id'=>0
+                'defect_id'=>1
             ],
             ['title'=>'Замена масла ДВС',
                 'time'=>0.3,
                 'price'=>500,
-                'defect_id'=>0
+                'defect_id'=>1
             ],
             ['title'=>'Замена опоры ДВС верхней',
                 'time'=>0.35,
                 'price'=>800,
-                'defect_id'=>0
+                'defect_id'=>1
             ],
             ['title'=>'Замена опоры ДВС нижней',
                 'time'=>0.14,
                 'price'=>1200,
-                'defect_id'=>0
+                'defect_id'=>1
             ],
             ['title'=>'Замена прокладки крышки клапанов',
                 'time'=>1.3,
                 'price'=>1500,
-                'defect_id'=>0
+                'defect_id'=>1
             ],
             // 5 кузовные малярные
             ['title'=>'Бампер передний-задний демонтаж монтаж',
                 'time'=>0.5,
                 'price'=>1500,
-                'defect_id'=>3
+                'defect_id'=>4
             ],
             ['title'=>'Окрас бампера',
                 'time'=>0.17,
                 'price'=>7000,
-                'defect_id'=>3
+                'defect_id'=>4
             ],
             ['title'=>'Крыло переднее демонтаж монтаж',
                 'time'=>0.3,
                 'price'=>1500,
-                'defect_id'=>3
+                'defect_id'=>4
             ],
             ['title'=>'Ремонт капота',
                 'time'=>0.47,
                 'price'=>3500,
-                'defect_id'=>3
+                'defect_id'=>4
             ],
             ['title'=>'Окрас капота 1 сторона',
                 'time'=>0.34,
                 'price'=>8000,
-                'defect_id'=>3
+                'defect_id'=>4
             ],
             ['title'=>'Ремонт порога',
                 'time'=>2,
                 'price'=>3500,
-                'defect_id'=>3
+                'defect_id'=>4
             ],
             ['title'=>'Окрас заднего крыла',
                 'time'=>0.15,
                 'price'=>7000,
-                'defect_id'=>3
+                'defect_id'=>4
             ],
         ]);
 
@@ -265,23 +265,23 @@ class DatabaseSeeder extends Seeder
             ['title'=>'Ford '], ['title'=>'Lada '],
         ]);
 
-        DB::table('model_cars')->insert([
-            ['brand_id'=>0, 'title'=>'Aicon'],           // 0
-            ['brand_id'=>0, 'title'=>'RS7'],             // 1
-            [ 'brand_id'=> 3, 'title'=>'Aveo'],          // 2
-            [ 'brand_id'=> 3, 'title'=>'Traverse'],      // 3
-            [ 'brand_id'=> 4, 'title'=>'Berlingo'],      // 4
-            [ 'brand_id'=> 4, 'title'=>'C3 Aircross'],   // 5
-            [ 'brand_id'=> 6, 'title'=>'Albea'],         // 6
-            [ 'brand_id'=> 7, 'title'=>'Pilot'],         // 7
-            [ 'brand_id'=> 7, 'title'=>'Accord'],        // 8
-            [ 'brand_id'=> 8, 'title'=>'Galaxy'],        // 9
-            [ 'brand_id'=> 8, 'title'=>'Escort'],        // 10
-            [ 'brand_id'=> 9, 'title'=>'Kalina'],        // 11
-            [ 'brand_id'=> 9, 'title'=>'Priora'],        // 12
-            [ 'brand_id'=> 9, 'title'=>'Samara'],        // 13
-            [ 'brand_id'=> 9, 'title'=>'Vesta'],         // 14
-            [ 'brand_id'=> 9, 'title'=>'Largus'],        // 15
+        DB::table('modelcars')->insert([
+            ['brand_id'=>1, 'title'=>'Aicon'],           // 0
+            ['brand_id'=>1, 'title'=>'RS7'],             // 1
+            [ 'brand_id'=> 4, 'title'=>'Aveo'],          // 2
+            [ 'brand_id'=> 4, 'title'=>'Traverse'],      // 3
+            [ 'brand_id'=> 5, 'title'=>'Berlingo'],      // 4
+            [ 'brand_id'=> 5, 'title'=>'C3 Aircross'],   // 5
+            [ 'brand_id'=> 7, 'title'=>'Albea'],         // 6
+            [ 'brand_id'=> 8, 'title'=>'Pilot'],         // 7
+            [ 'brand_id'=> 8, 'title'=>'Accord'],        // 8
+            [ 'brand_id'=> 9, 'title'=>'Galaxy'],        // 9
+            [ 'brand_id'=> 9, 'title'=>'Escort'],        // 10
+            [ 'brand_id'=> 10, 'title'=>'Kalina'],        // 11
+            [ 'brand_id'=> 10, 'title'=>'Priora'],        // 12
+            [ 'brand_id'=> 10, 'title'=>'Samara'],        // 13
+            [ 'brand_id'=> 10, 'title'=>'Vesta'],         // 14
+            [ 'brand_id'=> 10, 'title'=>'Largus'],        // 15
         ]);
 
         DB::table('cars')->insert([
@@ -291,82 +291,76 @@ class DatabaseSeeder extends Seeder
                 'surname'=>'Иванов',
                 'firstName'=>'Иван',
                 'patronymic'=>'Иванович',
-                'brand_id'=>0,
-                'modelСar_id'=>0,
+                //'brand_id'=>0,
+                'modelcar_id'=>1,
                 'color_id'=>2,
-                'defect_id'=>0,
+                'defect_id'=>1,
             ],
             [
                 'date'=>1976,
                 'num'=>'o122oo',
-                'malfunctions'=>'Не включается передача',
                 'surname'=>'Петров',
                 'firstName'=>'Петр',
                 'patronymic'=>'Иванович',
-                'brand_id'=>3,
-                'modelСar_id'=>3,
+                //'brand_id'=>3,
+                'modelcar_id'=>3,
                 'color_id'=>5,
-                'defect_id'=>0,
+                'defect_id'=>1,
             ],
             [
                 'date'=>2009,
                 'num'=>'o133oo',
-                'malfunctions'=>'Двигатель останавливается',
                 'surname'=>'Сидоров',
                 'firstName'=>'Сидор',
                 'patronymic'=>'Сидорович',
-                'brand_id'=>3,
-                'modelСar_id'=>3,
+                //'brand_id'=>3,
+                'modelcar_id'=>3,
                 'color_id'=>7,
                 'defect_id'=>1,
             ],
             [
                 'date'=>2003,
                 'num'=>'o144oo',
-                'malfunctions'=>'Утечка топлива и запах от топлива.',
                 'surname'=>'Лашманов',
                 'firstName'=>'Иван',
                 'patronymic'=>'Владимирович',
-                'brand_id'=>4,
-                'modelСar_id'=>4,
+                //'brand_id'=>4,
+                'modelcar_id'=>4,
                 'color_id'=>12,
-                'defect_id'=>1,
+                'defect_id'=>2,
             ],
             [
                 'date'=>1998,
                 'num'=>'o155oo',
-                'malfunctions'=>'Двигатель вращается, но не заводится.',
                 'surname'=>'Мазурчак',
                 'firstName'=>'Александр',
                 'patronymic'=>'Иванович',
-                'brand_id'=>9,
-                'modelСar_id'=>15,
+                //'brand_id'=>9,
+                'modelcar_id'=>15,
                 'color_id'=>11,
-                'defect_id'=>2,
+                'defect_id'=>3,
             ],
             [
                 'date'=>2010,
                 'num'=>'а555oo',
-                'malfunctions'=>'Хлопки двигателя в глушитель',
                 'surname'=>'Лабузов',
                 'firstName'=>'Дмитрий',
                 'patronymic'=>'Васильевич',
-                'brand_id'=>9,
-                'modelСar_id'=>12,
+                //'brand_id'=>9,
+                'modelcar_id'=>12,
                 'color_id'=>9,
-                'defect_id'=>3,
+                'defect_id'=>4,
             ],
             [
                 'date'=>2000,
                 'num'=>'е335аа',
-                'malfunctions'=>'Хлопки двигателя в глушитель',
                 'surname'=>'Лабузов',
                 'firstName'=>'Михаил',
                 'patronymic'=>'Васильевич',
-                'brand_id'=>9,
-                'modelСar_id'=>15,
+                //'brand_id'=>9,
+                'modelcar_id'=>15,
                 'color_id'=>9,
-                'defect_id'=>4,
+                'defect_id'=>5,
             ],
         ]);
 
@@ -376,7 +370,7 @@ class DatabaseSeeder extends Seeder
                 'firstName'=>'Иван',
                 'patronymic'=>'Иванович',
                 'passport'=>'4334 123456',
-                'birhday'=>'12-05-1975',         // год рождения
+                'birhday'=>'1975-05-12',         // год рождения
                 'address'=>'Донецк ул.Фадеева 5 кв.33',
             ],
             [
@@ -384,7 +378,7 @@ class DatabaseSeeder extends Seeder
                 'firstName'=>'Петр',
                 'patronymic'=>'Иванович',
                 'passport'=>'3232 333223',
-                'birhday'=>'05-08-1956',         // год рождения
+                'birhday'=>'1956-08-05',         // год рождения
                 'address'=>'Макеевка ул.Молодежная 27 кв.78',
             ],
             [
@@ -392,7 +386,7 @@ class DatabaseSeeder extends Seeder
                 'firstName'=>'Сидор',
                 'patronymic'=>'Сидорович',
                 'passport'=>'8989 757575',
-                'birhday'=>'23-11-2000',         // год рождения
+                'birhday'=>'2000-11-23',         // год рождения
                 'address'=>'Донецк ул.Набережная 78 кв.8',
             ],
             [
@@ -400,7 +394,7 @@ class DatabaseSeeder extends Seeder
                 'firstName'=>'Иван',
                 'patronymic'=>'Владимирович',
                 'passport'=>'8765 555555',
-                'birhday'=>'08-12-1999',         // год рождения
+                'birhday'=>'1999-12-08',         // год рождения
                 'address'=>'Ясиноватая ул.Мира 5 кв. 10',
             ],
             [
@@ -408,7 +402,7 @@ class DatabaseSeeder extends Seeder
                 'firstName'=>'Александр',
                 'patronymic'=>'Иванович',
                 'passport'=>'7768 342232',
-                'birhday'=>'29-07-1978',         // год рождения
+                'birhday'=>'1978-07-29',         // год рождения
                 'address'=>'Донецк ул. Ломоносова 19 кв. 54',
             ],
             [
@@ -416,7 +410,7 @@ class DatabaseSeeder extends Seeder
                 'firstName'=>'Дмитрий',
                 'patronymic'=>'Васильевич',
                 'passport'=>'5555 555445',
-                'birhday'=>'18-03-1998',         // год рождения
+                'birhday'=>'1998-03-18',         // год рождения
                 'address'=>'Донецк ул. Артема 59 кв. 17',
             ],
             [
@@ -424,7 +418,7 @@ class DatabaseSeeder extends Seeder
                 'firstName'=>'Михаил',
                 'patronymic'=>'Васильевич',
                 'passport'=>'7854 234511',
-                'birhday'=>'30-07-2001',         // год рождения
+                'birhday'=>'2001-07-30',         // год рождения
                 'address'=>'Макеевка ул. Пирогова 75 кв. 33',
             ],
         ]);
@@ -432,30 +426,27 @@ class DatabaseSeeder extends Seeder
         DB::table('professions')->insert([
             [
                 'title'=>'Механик-моторист',
-                'defect_id'=>0
-            ],
-            [
-                'title'=>'Механик по ремонту трансмиссии',
                 'defect_id'=>1
             ],
             [
-                'title'=>'Электрик',
+                'title'=>'Механик по ремонту трансмиссии',
                 'defect_id'=>2
             ],
             [
+                'title'=>'Электрик',
+                'defect_id'=>3
+            ],
+            [
                 'title'=>'Мастер кузовного ремонта',
-                'defect_id'=>3,
+                'defect_id'=>4,
             ],
             [
                 'title'=>'Механик по ремонту ходовой части',
-                'defect_id'=>4
-            ],
-            [
-                'title'=>'Диагност',
                 'defect_id'=>5
             ],
             [
-                'title'=>'Диспетчер',
+                'title'=>'Диагност',
+                'defect_id'=>6
             ],
         ]);
 
@@ -474,7 +465,7 @@ class DatabaseSeeder extends Seeder
                 'patronymic'=>'Альбертович',
                 'category'=>6,    // разряд
                 'experience'=>15,  // стаж
-                'profession_id'=>0,  // специальность двигатель
+                'profession_id'=>1,  // специальность двигатель
             ],
             [
                 'surname'=>'Курзин',
@@ -482,7 +473,7 @@ class DatabaseSeeder extends Seeder
                 'patronymic'=>'Павлович',
                 'category'=>5,    // разряд
                 'experience'=>20,  // стаж
-                'profession_id'=>0,  // двигатель
+                'profession_id'=>1,  // двигатель
             ],
             [
                 'surname'=>'Деревянко',
@@ -525,6 +516,7 @@ class DatabaseSeeder extends Seeder
                 'profession_id'=>5,  // специальность ходовая
             ],
         ]);
+
         DB::table('parks')->insert([
             // ходовая
             [
@@ -627,13 +619,14 @@ class DatabaseSeeder extends Seeder
 
 
         ]);
+
         DB::table('repairs')->insert([
             [
-                'service_id'=>0,        // оказанная услуга
-                'car_id'=>0,
+                'service_id'=>1,        // оказанная услуга
+                'car_id'=>1,
                 'worker_id'=>3,
-                'client_id'=>0,
-                'park_id'=>0,
+                'client_id'=>1,
+                'park_id'=>1,
                 //'datestart' ,         // поставка на ремонт
                 //'datereturn',
             ]

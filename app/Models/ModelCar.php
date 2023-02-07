@@ -5,14 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ModelCar extends Model
+class Modelcar extends Model
 {
     use HasFactory;
+
+    protected $with = ['brand'];
+
     protected $fillable = [
+        'brand_id',
         'title',
     ];
     // связь с машиной
     public function car(){
         return $this->hasMany(Car::class);
+    }
+    public function  brand(){
+        return $this->belongsTo(Brand::class);
     }
 }

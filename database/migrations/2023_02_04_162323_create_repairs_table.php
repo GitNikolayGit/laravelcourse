@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('client_id');
             $table->integer('park_id')->nullable();
             $table->date('datereturn')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

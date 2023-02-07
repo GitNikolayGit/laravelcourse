@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ColorController;
+use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('car.car_table');
-});
+Route::get('/', [CarController::class, 'index'] );
 
-Route::resource('colors', ColorController::class);
+Route::get('/car/edit/{id}', [CarController::class, 'edit']);
+Route::post('car/edit/{id}', [CarController::class, 'edit_res']);
+
+Route::get('/car/update', [CarController::class, 'edit']);
+Route::post('car/update', [CarController::class, 'edit-res']);
+
+Route::get('/car/sort_brand', [CarController::class, 'sort_brand']);

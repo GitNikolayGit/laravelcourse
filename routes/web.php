@@ -19,7 +19,8 @@ Route::get('/', [CarController::class, 'index'] );
 Route::get('/car/edit/{id}', [CarController::class, 'edit']);
 Route::post('car/edit/{id}', [CarController::class, 'edit_res']);
 
-Route::get('/car/update', [CarController::class, 'edit']);
-Route::post('car/update', [CarController::class, 'edit-res']);
+Route::get('/car/update', [CarController::class, 'edit'])->name('car-update');
+// добавление цвета
+Route::post('/car/add_color', [CarController::class, 'add_color']);
 
 Route::get('/car/sort_brand', [CarController::class, 'sort_brand']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\Color;
 use App\Models\Defect;
 use Illuminate\Http\Request;
 use App\Http\Requests\CarRequest;
@@ -22,7 +23,7 @@ class CarController extends Controller
         $car = $cars->find($id);
         return view('car.edit', ['car'=>$car, 'cars'=>$cars]);
     }
-
+    // редактирование машины
     public function edit_res(CarRequest $req, int $id){
         $car = Car::all()->find($id);
         $car->num = $req->input('num');
@@ -35,6 +36,15 @@ class CarController extends Controller
         return redirect()->action([CarController::class, 'index'])
             ->with('success', "Была отредактирована машина, с номером ".$car->num);
     }
+    // добавление цвета
+    public function add_color(Request $req){
+        $color = new Color();
+        $color->title = $req->input('color');
+        $color->save();
+        return back()->with('success', 'Был добавлен цвет '.$color->title);
+
+    }
+
     public function sort_brand(){
         return view('car.index');
     }

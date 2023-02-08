@@ -27,6 +27,7 @@
                 @yield('content2')
             </div>
 
+
 </main>
 <div class="fixed-bottom bg-light">
     <a class="btn btn btn btn-outline-secondary m-3" href="/" >Машины</a>

@@ -7,6 +7,7 @@ use App\Models\Color;
 use App\Models\Defect;
 use Illuminate\Http\Request;
 use App\Http\Requests\CarRequest;
+use Illuminate\Support\Facades\DB;
 
 class CarController extends Controller
 {
@@ -38,10 +39,16 @@ class CarController extends Controller
     }
     // добавление цвета
     public function add_color(Request $req){
-        $color = new Color();
-        $color->title = $req->input('color');
-        $color->save();
-        return back()->with('success', 'Был добавлен цвет '.$color->title);
+        $temp = DB::table('colors')->where('title', $req->input('color'));
+        if ($temp == null) {
+            $color = new Color();
+            $color->title = $req->input('color');
+            $color->save();
+            return back()->with('success', 'Был добавлен цвет ' . $color->title);
+        }
+        else{
+            return back()->with('success', 'Такой цвет уже есть');
+        }
 
     }
 

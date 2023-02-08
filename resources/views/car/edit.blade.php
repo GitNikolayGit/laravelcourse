@@ -79,6 +79,11 @@
                             </div>
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-outline-success">Добавить</button>
+                                <button type="submit" class="btn btn-outline-success">Добавить</button>
+                                <a href="{{url()->previous()}}" class="btn btn-default">Отмена</a>
+                            </div>
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-outline-success">Добавить</button>
                             </div>
 
                         </form>
@@ -91,8 +96,10 @@
 @endsection
 
 @section('content2')
+    <div class="col-sm p-1 row">
+        <div class="col-6 p-1 bg-light ">
     <!-- изменить машину -->
-    <form class="p3 bg-light text-center w-50" action="/car/edit/{{$car->id}}" method="post" enctype="multipart/form-data">
+    <form class="p3 bg-light text-center w-100" action="/car/edit/{{$car->id}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-1">
             <label for="surname">Владелец</label>
@@ -136,8 +143,16 @@
         </div>
         <div class="mt-3">
             <button type="submit" class="btn btn-outline-danger">Изменить</button>
+            <a href="{{url()->previous()}}" class="btn btn-outline-success">Отмена</a>
         </div>
     </form>
+
+        </div>
+        <div class="col-sm-5 bg-light">
+            <h6>Фото</h6>
+            <img  style="height: 350px" src="{{asset("storage/images/avto/".$car->modelcar->brand_id.$car->modelcar_id.".jpg")}}" alt="фото машины">
+        </div>
+    </div>
 @endsection
 
 

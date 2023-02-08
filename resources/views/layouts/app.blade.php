@@ -18,18 +18,20 @@
     </div>
 </nav>
 
-<main class="col-sm p-1 row" >
-
+<main class="col-sm p-1 " >
+    <div class="container-fluid row">
             <div class="col-2 p-1 bg-light ">
                 @yield('content')
             </div>
             <div class="col-sm-10 bg-light">
                 @yield('content2')
             </div>
-
+    </div>
 
 </main>
 <div class="fixed-bottom bg-light">
+    <a class="btn btn btn btn-outline-secondary m-3" href="/repair/create" >Заявка</a>
+    <a class="btn btn btn btn-outline-secondary m-3" href="/repair" >Ремонт</a>
     <a class="btn btn btn btn-outline-secondary m-3" href="/" >Машины</a>
     <a class="btn btn btn btn-outline-secondary m-3" href="/client" >Клиенты</a>
     <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">найти</button>

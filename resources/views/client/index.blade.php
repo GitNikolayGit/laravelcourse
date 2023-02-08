@@ -39,7 +39,7 @@
                 <td>{{$client->birhday}}</td>
                 <td>{{$client->address}}</td>
                 <td class="text-center">
-                    <a class="btn btn-success" href="/car/edit/{{$client->id}}" title="Изменить...">
+                    <a class="btn btn-success" href="/client/edit/{{$client->id}}" title="Изменить...">
                         <i class="bi bi-pencil"></i>
                     </a>
                 </td>

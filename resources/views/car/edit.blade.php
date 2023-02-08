@@ -79,11 +79,6 @@
                             </div>
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-outline-success">Добавить</button>
-                                <button type="submit" class="btn btn-outline-success">Добавить</button>
-                                <a href="{{url()->previous()}}" class="btn btn-default">Отмена</a>
-                            </div>
-                            <div class="mt-3">
-                                <button type="submit" class="btn btn-outline-success">Добавить</button>
                             </div>
 
                         </form>
@@ -102,7 +97,7 @@
     <form class="p3 bg-light text-center w-100" action="/car/edit/{{$car->id}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-1">
-            <label for="surname">Владелец</label>
+            <label for="surname"><h6>Владелец</h6></label>
             <input type="text" class="form-control" id="surname" name="surname" value="{{$car->surname}}">
         </div>
         <div class="mb-1">
@@ -112,7 +107,7 @@
             <input type="text" class="form-control" id="patronymic" name="patronymic" value="{{$car->patronymic}}">
         </div>
         <div class="mb-1">
-            <label for="date">Машина</label>
+            <label for="date"><h6>Машина</h6></label>
             <input type="text" readonly class="form-control" id="date" name="date" value="{{$car->date}}">
         </div>
         <div class="mb-1">
@@ -133,7 +128,7 @@
             </select>
         </div>
         <div class="mb-1">
-            <label for="defect">Неисправность</label>
+            <label for="defect"><h6>Неисправность</h6></label>
             <select class="form-control" id="defect" name="defect">
                 <option value="{{$car->id}}">{{$car->defect->title}}</option>
                 @foreach(\App\Models\Defect::all() as $dir)

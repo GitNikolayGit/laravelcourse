@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Car;
 use App\Models\Color;
 use App\Models\Defect;
@@ -12,11 +13,8 @@ use Illuminate\Support\Facades\DB;
 class CarController extends Controller
 {
     // машины в ремонте
-    public function index($id = null){
-
-        $car = new Car();
-
-        return view('car.index', ['cars'=>Car::with(['modelcar', 'color', 'defect'])->get(), 'car'=>$car]);
+    public function index(){
+        return view('car.index', ['cars'=>Car::with(['modelcar', 'color', 'defect'])->get()]);
     }
     // окно редактирования машины
     public function edit(int $id){
@@ -51,8 +49,21 @@ class CarController extends Controller
         }
 
     }
+    // добавление бренда
+    public function add_brand(Request $req){
+        $temp = DB::table('brands')->whire('title', $req->input('brand'));
+        if ($temp == null) {
+            $brand = new Brand();
+            $brand->title = $req->input('brand');
+            $brand->save();
+            return back()->with('success', 'Был добавлена марка автомобиля');
+        }
+        else{
+            return back()->with('success', 'Такая марка авто уже есть');
+        }
+    }
 
     public function sort_brand(){
-        return view('car.index');
+        return view('car.index.blade.php');
     }
 }

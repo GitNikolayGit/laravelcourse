@@ -17,20 +17,9 @@ class ClientController extends Controller
     {
         //
     }
-
-    public function store(Request $request)
+    public function edit(int $id)
     {
-        //
-    }
-
-    public function show(Client $client)
-    {
-        //
-    }
-
-    public function edit(Client $client)
-    {
-        //
+        return view('client.edit', ['client' => Client::find($id), 'id' => $id]);
     }
 
     public function update(Request $request, Client $client)

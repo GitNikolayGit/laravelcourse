@@ -20,6 +20,6 @@ class Service extends Model
     }
     // связь с неисправностью
     public function  defect(){
-        return $this->bolongsTo(Defect::class);
+        return $this->belongsTo(Defect::class);
     }
 }

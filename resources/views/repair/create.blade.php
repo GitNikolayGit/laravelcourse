@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    редактирование
+    заявка
 @endsection
 
 @section('content')
@@ -91,7 +91,8 @@
     <div class="col-sm p-1 row">
         <div class="col-sm-7 p-1 bg-light ">
             <!-- добавить клиента -->
-            <form class="p3 bg-light text-center w-100 form" action="/client/create" method="post"
+            <h6>Добавить заявку</h6>
+            <form class="p3 bg-light text-center w-100 form" action="/repair/create" method="post"
                   enctype="multipart/form-data">
                 @csrf
                 <div class="mb-1">
@@ -145,7 +146,9 @@
                            value="{{old('num')}}">
                 </div>
                 <div class="mb-1">
-                    <label for="model">Модель</label><select class="form-control" id="model" name="model">
+                    <label for="model">Модель</label>
+                    <select class="form-control" id="model" name="model">
+                        <option></option>
                         @foreach(\App\Models\Modelcar::with('brand')->get() as $dir)
                             <option value="{{$dir->id}}">{{$dir->brand->title. ' '.$dir->title}}</option>
                         @endforeach
@@ -153,7 +156,9 @@
                 </div>
                 <!-- цвет -->
                 <div class="mb-1">
-                    <label for="color">Цвет</label><select class="form-control" id="color" name="color">
+                    <label for="color">Цвет</label>
+                    <select class="form-control" id="color" name="color">
+                        <option></option>
                         @foreach(\App\Models\Color::all() as $dir)
                             <option value="{{$dir->id}}">{{$dir->title}}</option>
                         @endforeach
@@ -162,14 +167,43 @@
                 <div class="mb-1">
                     <label for="defect">Неисправность</label>
                     <select class="form-control" id="defect" name="defect">
+                        <option></option>
                         @foreach(\App\Models\Defect::all() as $dir)
+                            <option value="{{$dir->id}}">{{$dir->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mb-1">
+                    <label for="worker">Работник</label>
+                    <select class="form-control" id="worker" name="worker">
+                        <option></option>
+                        @foreach(\App\Models\Worker::all() as $dir)
+                            <option value="{{$dir->id}}">{{$dir->surname. ' '.$dir->firstName. ' '.$dir->patronymic. ' '.$dir->profession->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-1">
+                    <label for="service">Услуга</label>
+                    <select class="form-control" id="service" name="service">
+                        <option></option>
+                        @foreach(\App\Models\Service::all() as $dir)
+                            <option value="{{$dir->id}}">{{$dir->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mb-1">
+                    <label for="park">Запчасть</label>
+                    <select class="form-control" id="park" name="park">
+                        <option></option>
+                        @foreach(\App\Models\Park::all() as $dir)
                             <option value="{{$dir->id}}">{{$dir->title}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="mt-3">
                     <button type="submit" class="btn btn-outline-success">Добавить</button>
-                    <a href="{{url()->previous()}}" class="btn btn-outline-success">Отмена</a>
                 </div>
             </form>
         </div>

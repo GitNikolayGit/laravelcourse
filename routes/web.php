@@ -41,3 +41,4 @@ Route::post('/client/create', [ClientController::class, 'create']);
 Route::get('/repair', [RepairController::class, 'index']);
 //
 Route::get('/repair/create', [RepairController::class, 'create']);
+Route::post('/repair/create', [RepairController::class, 'create_res']);

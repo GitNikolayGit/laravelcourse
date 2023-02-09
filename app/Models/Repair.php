@@ -10,6 +10,7 @@ class Repair extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
     protected $fillable = [
         'service_id',        // оказанная услуга
         'car_id',
@@ -39,9 +40,5 @@ class Repair extends Model
     // связь с запчастью
     public function  park(){
         return $this->belongsTo(Park::class);
-    }
-    // связь с неисправностью
-    public function defect(){
-        return $this->belongsTo(Defect::class);
     }
 }

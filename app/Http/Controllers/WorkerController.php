@@ -11,6 +11,14 @@ class WorkerController extends Controller
     {
         return view('worker.index', ['workers'=> Worker::with('profession')->get()]);
     }
+    // редактирование работника
+    public function edit(int $id){
+        return view('worker.edit', ['worker' => Worker::find($id), 'id' => $id]);
+    }
+    // увольнение работника
+    public function delete(int $id){
+        //
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -44,16 +52,7 @@ class WorkerController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Worker  $worker
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Worker $worker)
-    {
-        //
-    }
+
 
     /**
      * Update the specified resource in storage.

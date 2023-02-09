@@ -11,6 +11,11 @@ img {
     height: 350px;
 }
 
+.form {
+    overflow-y: scroll;
+    height: 530px;
+}
+
 table {
     width: 100%;
     display: block;

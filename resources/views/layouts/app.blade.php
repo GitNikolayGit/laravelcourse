@@ -30,10 +30,10 @@
 
 </main>
 <div class="fixed-bottom bg-light">
-    <a class="btn btn btn btn-outline-secondary m-3" href="/repair/create" >Заявка</a>
-    <a class="btn btn btn btn-outline-secondary m-3" href="/repair" >Ремонт</a>
-    <a class="btn btn btn btn-outline-secondary m-3" href="/" >Машины</a>
-    <a class="btn btn btn btn-outline-secondary m-3" href="/client" >Клиенты</a>
+    <a class="btn btn btn btn-secondary m-3" href="/repair/create" >Заявка</a>
+    <a class="btn btn btn btn-secondary m-3" href="/repair" >Ремонт</a>
+    <a class="btn btn btn btn-secondary m-3" href="/" >Машины</a>
+    <a class="btn btn btn btn-secondary m-3" href="/client" >Клиенты</a>
     <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">найти</button>
     <ul class="dropdown-menu" style="width:195px">
         <li><a class="dropdown-item" id="startArr">исходный массива </a></li>

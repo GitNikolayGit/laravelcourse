@@ -38,10 +38,10 @@
                 </div>
                 <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
                     <div class="card-body">
-                        <form class="p3 bg-light text-center w-100" action="/car/add_brand" method="post" enctype="multipart/form-data">
+                        <form class="p3 bg-light text-center w-100" action="/car/add_brand" method="post">
                             @csrf
                             <div class="mb-1">
-                                <input type="text" class="form-control" id="surname" name="surname" placeholder="марка">
+                                <input type="text" class="form-control" id="brand" name="brand" placeholder="марка">
                                 <div class="mt-3">
                                     <button type="submit" class="btn btn-outline-success">Добавить</button>
                                 </div>
@@ -59,12 +59,10 @@
                 </div>
                 <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
                     <div class="card-body">
-                        <form class="p3 bg-light text-center w-100" action="/car/addcolor/{{$car->id}}" method="post" enctype="multipart/form-data">
+                        <form class="p3 bg-light text-center w-100" action="/car/add_model" method="post" enctype="multipart/form-data">
                             @csrf
-
                             <div class="mb-1">
                                 <select class="form-control" id="color" name="color">
-                                    <option>марка</option>
                                     @foreach(\App\Models\Brand::all() as $dir)
                                         <option value="{{$dir->id}}">{{$dir->title}}</option>
                                     @endforeach
@@ -80,7 +78,6 @@
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-outline-success">Добавить</button>
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -92,95 +89,93 @@
 
 @section('content2')
     <div class="col-sm p-1 row">
-        <div class="col-6 p-1 bg-light ">
+        <div class="col-sm-7 p-1 bg-light ">
             <!-- добавить клиента -->
-            <form class="p3 bg-light text-center w-100" action="/client/create" method="post"
+            <form class="p3 bg-light text-center w-100 form" action="/client/create" method="post"
                   enctype="multipart/form-data">
                 @csrf
                 <div class="mb-1">
-                    <label for="surname">Фамилия</label>
-                    <input type="text" class="form-control" id="surname" name="surname" value="{{old('surname')}}">
+                    <label for="surname">клиент</label>
+                    <input type="text" placeholder="фамилия" class="form-control" id="surname" name="surname"
+                           value="{{old('surname')}}">
                 </div>
                 <div class="mb-1">
-                    <label for="firstName">Имя</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName"
+                    <input type="text" placeholder="имя" class="form-control" id="firstName" name="firstName"
                            value="{{old('firstName')}}">
                 </div>
                 <div class="mb-1">
-                    <label for="patronymic">Отчество</label>
-                    <input type="text" class="form-control" id="patronymic" name="patronymic"
+                    <input type="text" placeholder="отчество" class="form-control" id="patronymic" name="patronymic"
                            value="{{old('patronymic')}}">
                 </div>
                 <div class="mb-1">
-                    <label for="passport">Паспорт</label>
-                    <input type="text" class="form-control" id="passport" name="passport" value="{{old('passport')}}">
+                    <input type="text" placeholder="паспорт" class="form-control" id="passport" name="passport"
+                           value="{{old('passport')}}">
                 </div>
                 <div class="mb-1">
-                    <label for="birhday">Дата рождения</label>
-                    <input type="text" readonly class="form-control" id="birhday" name="birhday"
-                           value="{{old('birhday')}}">
+                    <label for="birhday">дата рождения</label>
+                    <input type="date" class="form-control" id="birhday" name="birhday" min="1950-01-01">
                 </div>
                 <div class="mb-1">
-                    <label for="address">Адрес</label>
-                    <input type="text" class="form-control" id="address" name="address"
+                    <input type="text" placeholder="адрес" class="form-control" id="address" name="address"
                            value="{{old('address')}}">
                 </div>
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-outline-danger">Добавить</button>
-                    <a href="{{url()->previous()}}" class="btn btn-outline-success">Отмена</a>
-                </div>
-            </form>
-
-        </div>
-        <!-- добавить машину -->
-        <div class="col-sm-5 bg-light">
-            <form class="p3 bg-light text-center w-100" action="/car/create" method="post" enctype="multipart/form-data">
-                @csrf
                 <div class="mb-1">
-                    <label for="surname"><h6>Владелец</h6></label>
-                    <input type="text" class="form-control" id="surname" name="surname" value="{{old('surname')}}">
+                    <label for="photo-client">фото клиента</label>
+                    <p><input type="file" class="form-control" name="photo-client" id="photo-client"></p>
                 </div>
                 <div class="mb-1">
-                    <input type="text" class="form-control" id="firstName" name="firstName" value="{{'firstName'}}">
+                    <label for="surname">машина</label>
+                    <input type="text" placeholder="владелец фамилия" class="form-control" id="surname" name="surname"
+                           value="{{old('surname')}}">
                 </div>
                 <div class="mb-1">
-                    <input type="text" class="form-control" id="patronymic" name="patronymic" value="{{'patronymic'}}">
+                    <input type="text" placeholder="владелец имя" class="form-control" id="firstName" name="firstName"
+                           value="{{old('firstName')}}">
                 </div>
                 <div class="mb-1">
-                    <label for="date"><h6>Машина</h6></label>
-                    <input type="text" readonly class="form-control" id="date" name="date" value="{{'date'}}">
+                    <input type="text" placeholder="владелец отчество" class="form-control" id="patronymic" name="patronymic"
+                           value="{{old('patronymic')}}">
                 </div>
                 <div class="mb-1">
-                    <input type="text" class="form-control" id="num" name="num" value="{{'num'}}">
+                    <input type="text" placeholder="год выпуска" class="form-control" id="date" name="date"
+                           value="{{old('date')}}">
                 </div>
                 <div class="mb-1">
-                    <input type="text" readonly class="form-control" id="brand" name="brand" value="{{'brand'}}">
+                    <input type="text" placeholder="номер авто" class="form-control" id="num" name="num"
+                           value="{{old('num')}}">
                 </div>
                 <div class="mb-1">
-                    <input type="text" readonly class="form-control" id="modelcar" name="modelcar" value="{{'modelcar'}}">
+                    <label for="model">Модель</label><select class="form-control" id="model" name="model">
+                        @foreach(\App\Models\Modelcar::with('brand')->get() as $dir)
+                            <option value="{{$dir->id}}">{{$dir->brand->title. ' '.$dir->title}}</option>
+                        @endforeach
+                    </select>
                 </div>
+                <!-- цвет -->
                 <div class="mb-1">
-                    <select class="form-control" id="color" name="color">
-                        <option value="{{$car->id}}">{{$car->color->title}}</option>
+                    <label for="color">Цвет</label><select class="form-control" id="color" name="color">
                         @foreach(\App\Models\Color::all() as $dir)
                             <option value="{{$dir->id}}">{{$dir->title}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="mb-1">
-                    <label for="defect"><h6>Неисправность</h6></label>
+                    <label for="defect">Неисправность</label>
                     <select class="form-control" id="defect" name="defect">
-                        <option value="{{$car->id}}">{{$car->defect->title}}</option>
                         @foreach(\App\Models\Defect::all() as $dir)
                             <option value="{{$dir->id}}">{{$dir->title}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="mt-3">
-                    <button type="submit" class="btn btn-outline-danger">Изменить</button>
+                    <button type="submit" class="btn btn-outline-success">Добавить</button>
                     <a href="{{url()->previous()}}" class="btn btn-outline-success">Отмена</a>
                 </div>
             </form>
+        </div>
+
+        <div class="col-sm-5 bg-light">
+
         </div>
     </div>
 @endsection

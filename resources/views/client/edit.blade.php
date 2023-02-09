@@ -40,6 +40,7 @@
                     <input type="text" readonly class="form-control" id="birhday" name="birhday"
                                                         value="{{$client->birhday}}">
                 </div>
+
                 <div class="mb-1">
                     <label for="address">Адрес</label>
                     <input type="text" class="form-control" id="address" name="address"

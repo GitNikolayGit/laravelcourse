@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BrandRequest;
+use App\Http\Requests\ColorRequest;
 use App\Models\Brand;
 use App\Models\Car;
 use App\Models\Color;
@@ -36,7 +38,7 @@ class CarController extends Controller
             ->with('success', "Была отредактирована машина, с номером ".$car->num);
     }
     // добавление цвета
-    public function add_color(Request $req){
+    public function add_color(ColorRequest $req){
         $temp = DB::table('colors')->where('title', $req->input('color'));
         if ($temp == null) {
             $color = new Color();
@@ -50,8 +52,8 @@ class CarController extends Controller
 
     }
     // добавление бренда
-    public function add_brand(Request $req){
-        $temp = DB::table('brands')->whire('title', $req->input('brand'));
+    public function add_brand(BrandRequest $req){
+        $temp = DB::table('brands')->where('title', $req->input('brand'));
         if ($temp == null) {
             $brand = new Brand();
             $brand->title = $req->input('brand');
@@ -61,6 +63,10 @@ class CarController extends Controller
         else{
             return back()->with('success', 'Такая марка авто уже есть');
         }
+    }
+    // добавление модели
+    public function add_model(ModelRequest $req){
+        $temp = DB::table('modelcars')->where('title', $req->input('model'));
     }
 
     public function sort_brand(){

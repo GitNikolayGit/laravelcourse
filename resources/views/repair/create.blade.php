@@ -124,17 +124,17 @@
                     <p><input type="file" class="form-control" name="photo-client" id="photo-client"></p>
                 </div>
                 <div class="mb-1">
-                    <label for="surname">машина</label>
-                    <input type="text" placeholder="владелец фамилия" class="form-control" id="surname" name="surname"
-                           value="{{old('surname')}}">
+                    <label for="surname-owner">машина</label>
+                    <input type="text" placeholder="владелец фамилия" class="form-control" id="surname-owner" name="surname-owner"
+                           value="{{old('surname-owner')}}">
                 </div>
                 <div class="mb-1">
-                    <input type="text" placeholder="владелец имя" class="form-control" id="firstName" name="firstName"
-                           value="{{old('firstName')}}">
+                    <input type="text" placeholder="владелец имя" class="form-control" id="firstName-owner" name="firstName-owner"
+                           value="{{old('firstName-owner')}}">
                 </div>
                 <div class="mb-1">
-                    <input type="text" placeholder="владелец отчество" class="form-control" id="patronymic" name="patronymic"
-                           value="{{old('patronymic')}}">
+                    <input type="text" placeholder="владелец отчество" class="form-control" id="patronymic-owner" name="patronymic-owner"
+                           value="{{old('patronymic-owner')}}">
                 </div>
                 <div class="mb-1">
                     <input type="text" placeholder="год выпуска" class="form-control" id="date" name="date"

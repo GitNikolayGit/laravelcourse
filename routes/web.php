@@ -37,8 +37,11 @@ Route::get('/client/edit/{id}', [ClientController::class, 'edit']);
 // добавить клиента
 Route::post('/client/create', [ClientController::class, 'create']);
 
-// ремонт заявки
+// ремонт
 Route::get('/repair', [RepairController::class, 'index']);
-//
+// заявки
 Route::get('/repair/create', [RepairController::class, 'create']);
 Route::post('/repair/create', [RepairController::class, 'create_res']);
+
+// работники
+Route::get('/worker', [\App\Http\Controllers\WorkerController::class, 'index']);

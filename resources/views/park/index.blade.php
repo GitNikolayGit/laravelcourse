@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/park/create">принять на работу</a>
+    <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/park/create">Добавить</a>
 @endsection
 
 @section('content2')

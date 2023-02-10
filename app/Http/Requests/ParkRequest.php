@@ -13,7 +13,7 @@ class ParkRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class ParkRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'price' => 'required|numeric'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'поле стаж должно быть заполнено',
+            'price.required' => 'поле стаж должно быть заполнено',
+            'price.numeric' => 'в поле стаж должно быть число',
         ];
     }
 }

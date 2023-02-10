@@ -32,9 +32,9 @@ class ParkRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'поле стаж должно быть заполнено',
-            'price.required' => 'поле стаж должно быть заполнено',
-            'price.numeric' => 'в поле стаж должно быть число',
+            'title.required' => 'поле наименование должно быть заполнено',
+            'price.required' => 'поле цена должно быть заполнено',
+            'price.numeric' => 'в поле цена должно быть число',
         ];
     }
 }

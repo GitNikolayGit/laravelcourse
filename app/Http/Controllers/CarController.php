@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BrandRequest;
 use App\Http\Requests\ColorRequest;
+use App\Http\Requests\ModelRequest;
 use App\Models\Brand;
 use App\Models\Car;
 use App\Models\Color;
@@ -22,7 +23,7 @@ class CarController extends Controller
     public function edit(int $id){
         $cars = Car::with(['modelcar', 'color', 'defect'])->get();
         $car = $cars->find($id);
-        return view('car.edit', ['car'=>$car, 'cars'=>$cars]);
+        return view('car.edit', ['car'=>$car]);
     }
     // редактирование машины
     public function edit_res(CarRequest $req, int $id){

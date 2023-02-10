@@ -39,18 +39,22 @@ class ParkController extends Controller
                 ->with('success', "такая деталь уже есть");
         }
     }
-
-    public function delete(Request $request)
-    {
-        //
-    }
-
+    // редактирование детали
     public function edit(int $id)
     {
-        //
+        $park = Park::all()->find($id);
+        return view('park.edit', ['park' => $park, 'id' => $id]);
     }
 
-    public function edit_res(ParkRequest $req){
+    public function edit_res(ParkRequest $req, int $id){
+        $park = Park::all()->find($id);
+        $park->title = $req->input('title');
+        $park->price = $req->input('price');
+        $park->save();
+        $file = $req->file('photo');
+        $file?->storePubliclyAs('public/images/park', $id.'.jpg');
+        return redirect()->action([ParkController::class, 'index'])
+            ->with('success', "Была изменена деталь");
 
     }
 

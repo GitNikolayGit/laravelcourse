@@ -53,3 +53,12 @@ Route::get('/worker/delete/{id}', [\App\Http\Controllers\WorkerController::class
 // добавление
 Route::get('/worker/create', [\App\Http\Controllers\WorkerController::class, 'create']);
 Route::post('/worker/create', [\App\Http\Controllers\WorkerController::class, 'create_res']);
+
+// запчасти
+Route::get('/park', [\App\Http\Controllers\ParkController::class, 'index']);
+// добавить
+Route::get('/park/create', [\App\Http\Controllers\ParkController::class, 'create']);
+Route::post('park/create', [\App\Http\Controllers\ParkController::class, 'create_res']);
+// изменить
+Route::get('/park/edit/{id}', [\App\Http\Controllers\ParkController::class, 'edit']);
+Route::post('/park/edit/{id}', [\App\Http\Controllers\ParkController::class, 'edit_res']);

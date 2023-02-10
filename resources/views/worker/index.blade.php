@@ -33,10 +33,10 @@
                 <td>{{$worker->experience}}</td>
                 <td>{{$worker->profession->title}}</td>
                 <td class="text-center">
-                    <a class="btn btn-success" href="/worker/edit/{{$worker->id}}" title="Изменить...">
+                    <a class="btn btn-outline-success" href="/worker/edit/{{$worker->id}}" title="Изменить...">
                         <i class="bi bi-pencil"></i>
                     </a>
-                    <a class="btn btn-danger" href="/worker/delete/{{$worker->id}}" title="Удалить">
+                    <a class="btn btn-outline-danger" href="/worker/delete/{{$worker->id}}" title="Удалить">
                         уволить
                     </a>
                 </td>

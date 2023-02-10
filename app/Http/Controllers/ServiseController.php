@@ -7,14 +7,9 @@ use Illuminate\Http\Request;
 
 class ServiseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return view('service.index', ['services' => Service::with('defect')->get()]);
     }
 
     /**

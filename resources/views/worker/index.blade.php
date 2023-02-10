@@ -36,6 +36,9 @@
                     <a class="btn btn-success" href="/worker/edit/{{$worker->id}}" title="Изменить...">
                         <i class="bi bi-pencil"></i>
                     </a>
+                    <a class="btn btn-danger" href="/worker/delete/{{$worker->id}}" title="Удалить">
+                        уволить
+                    </a>
                 </td>
             </tr>
         @endforeach

@@ -46,5 +46,5 @@ Route::post('/repair/create', [RepairController::class, 'create_res']);
 // работники
 Route::get('/worker', [\App\Http\Controllers\WorkerController::class, 'index']);
 Route::get('/worker/edit/{id}', [\App\Http\Controllers\WorkerController::class, 'edit']);
-Route::post('/worker/edit/{id}', [\App\Http\Controllers\WorkerController::class, 'index']);
+Route::post('/worker/edit/{id}', [\App\Http\Controllers\WorkerController::class, 'edit_res']);
 Route::get('/worker/delete/{id}', [\App\Http\Controllers\WorkerController::class, 'delete']);

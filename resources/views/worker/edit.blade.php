@@ -14,8 +14,7 @@
     <div class="col-sm p-1 row">
         <div class="col-6 p-1 bg-light ">
             <!-- изменить работника -->
-            <form class="p3 bg-light text-center w-100" action="/worker/edit/{{$worker->id}}" method="post"
-                  enctype="multipart/form-data">
+            <form class="p3 bg-light text-center w-100" action="/worker/edit/{{$worker->id}}" method="post">
                 @csrf
                 <div class="mb-1">
                     <label for="surname">Фамилия</label>
@@ -48,11 +47,10 @@
                 </div>
                 <div class="mt-3">
                     <button type="submit" class="btn btn-outline-danger">Изменить</button>
-                    <a href="/worker/delete" class="btn btn-outline-success">Уволить</a>
+
                     <a href="{{url()->previous()}}" class="btn btn-outline-success">Отмена</a>
                 </div>
             </form>
-
         </div>
         <div class="col-sm-5 bg-light">
             <h6>Фото</h6>

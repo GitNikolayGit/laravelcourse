@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('category');
             $table->integer('experience');
             $table->integer('profession_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

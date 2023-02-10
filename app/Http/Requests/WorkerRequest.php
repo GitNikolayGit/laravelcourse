@@ -30,6 +30,7 @@ class WorkerRequest extends FormRequest
             'patronymic' => 'required',
             'category' => 'required|numeric',    // разряд
             'experience' => 'required|numeric',  // стаж
+            'profession' => 'required',
         ];
     }
     public function messages()
@@ -42,6 +43,7 @@ class WorkerRequest extends FormRequest
             'category.numeric' => 'в поле разряд должно быть число',
             'experience.required' => 'поле стаж должно быть заполнено',
             'experience.numeric' => 'в поле стаж должно быть число',
+            'profession.required' => 'поле профессия должно быть заполнено',
         ];
     }
 }

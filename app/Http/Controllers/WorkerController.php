@@ -27,7 +27,7 @@ class WorkerController extends Controller
         $worker->profession_id = Profession::all()->where('title', $req->input('profession'))->value('id');
         $worker->save();
         return redirect()->action([WorkerController::class, 'index'])
-            ->with('success', "был удален работник");
+            ->with('success', "были изменены данны");
     }
     // увольнение работника
     public function delete(int $id){
@@ -35,10 +35,28 @@ class WorkerController extends Controller
         return redirect()->action([WorkerController::class, 'index'])
             ->with('success', "Был уволен работник");
     }
-
+    // добавление работника
     public function create()
     {
-        //
+        return view('worker.create');
+    }
+    public function create_res(WorkerRequest $req){
+        $worker = new Worker();
+        $worker->surname = $req->input('surname');
+        $worker->firstName = $req->input('firstName');
+        $worker->patronymic = $req->input('patronymic');
+        $worker->category = $req->input('category');
+        $worker->experience = $req->input('experience');
+        $worker->profession_id = $req->input('profession');
+        $worker->save();
+
+        $file = $req->file('photo');
+        if ($file != null){
+            $id = Worker::all()->last()->id;
+            $file->storePubliclyAs('public/images/worker', $id.'.jpg');
+        }
+        return redirect()->action([WorkerController::class, 'index'])
+            ->with('success', "Был добавлен сотрудник");
     }
 
 

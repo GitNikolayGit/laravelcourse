@@ -33,6 +33,7 @@ Route::post('/car/add_brand', [CarController::class, 'add_brand']);
 Route::get('/client', [ClientController::class, 'index']);
 // редактировать
 Route::get('/client/edit/{id}', [ClientController::class, 'edit']);
+Route::post('/client/edit/{id}', [ClientController::class, 'edit_res']);
 
 // добавить клиента
 Route::post('/client/create', [ClientController::class, 'create']);

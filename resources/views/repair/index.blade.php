@@ -1,19 +1,13 @@
 @extends('layouts.app')
 
 @section('title')
-    Машины
+    Ремонт
 @endsection
 
 @section('content')
 
 @endsection
-'service_id',        // оказанная услуга
-'car_id',
-'worker_id',
-'client_id',
-'park_id',
-//'datestart' ,      // поставка на ремонт
-'datereturn',
+
 @section('content2')
     <table class="table table-striped caption-top">
         <caption>ремонт</caption>
@@ -26,6 +20,7 @@
             <th>Работник</th>
             <th>Клиент</th>
             <th>Запчасть</th>
+            <th>Сервис</th>
             <th>Дата возврата</th>
             <th></th>
         </tr>
@@ -41,6 +36,7 @@
                 <td>{{$repair->worker->surname. ' '.$repair->worker->firstName. ' '.$repair->worker->patronymic}}</td>
                 <td>{{$repair->client->surname. ' '.$repair->client->firstName. ' '.$repair->client->patronymic}}</td>
                 <td>{{$repair->park->title}}</td>
+                <td>{{$repair->service->title}}</td>
                 <td></td>
                 <td class="text-center">
                     <a class="btn btn-success" href="/client/edit/{{$repair->id}}" title="Изменить...">

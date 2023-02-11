@@ -65,7 +65,7 @@
         </div>
         <div class="mb-1">
             <select class="form-control" id="color" name="color">
-                <option value="{{$car->id}}">{{$car->color->title}}</option>
+                <option value="{{$car->color->id}}">{{$car->color->title}}</option>
                 @foreach(\App\Models\Color::all() as $dir)
                     <option value="{{$dir->id}}">{{$dir->title}}</option>
                 @endforeach
@@ -74,7 +74,7 @@
         <div class="mb-1">
             <label for="defect"><h6>Неисправность</h6></label>
             <select class="form-control" id="defect" name="defect">
-                <option value="{{$car->id}}">{{$car->defect->title}}</option>
+                <option value="{{$car->defect->id}}">{{$car->defect->title}}</option>
                 @foreach(\App\Models\Defect::all() as $dir)
                     <option value="{{$dir->id}}">{{$dir->title}}</option>
                 @endforeach

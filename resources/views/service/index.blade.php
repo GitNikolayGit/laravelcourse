@@ -5,12 +5,10 @@
 @endsection
 
 @section('content')
+    <p></p>
     <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/park/create">Добавить</a>
 @endsection
-'title',
-'time',
-'price',
-'defect_id'
+
 @section('content2')
     <table  class="table table-striped caption-top">
         <caption>запчасти</caption>

@@ -23,7 +23,7 @@ class CarController extends Controller
     public function edit(int $id){
         $cars = Car::with(['modelcar', 'color', 'defect'])->get();
         $car = $cars->find($id);
-        return view('car.edit', ['car'=>$car]);
+        return view('car.edit', ['car'=>$car, 'id'=>$id]);
     }
     // редактирование машины
     public function edit_res(CarRequest $req, int $id){

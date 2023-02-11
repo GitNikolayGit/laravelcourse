@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
     <title>@yield('title')</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -11,21 +11,21 @@
     <script src="{{asset('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 </head>
 
-<body >
+<body>
 <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid"  >
+    <div class="container-fluid">
         @include('inc.messages')
     </div>
 </nav>
 
-<main class="col-sm p-1 " >
+<main class="col-sm p-1 ">
     <div class="container-fluid row">
-            <div class="col-2 p-1 bg-light ">
-                @yield('content')
-            </div>
-            <div class="col-sm-10 bg-light">
-                @yield('content2')
-            </div>
+        <div class="col-2 p-1 bg-light ">
+            @yield('content')
+        </div>
+        <div class="col-sm-10 bg-light">
+            @yield('content2')
+        </div>
     </div>
 
 </main>

@@ -185,7 +185,7 @@
                 </div>
                 <div class="mb-1">
                     <label for="service">Услуга</label>
-                    <select class="form-control" id="service" name="service">
+                    <select class="form-control" id="service" name="service" multiple  >
                         <option></option>
                         @foreach(\App\Models\Service::all() as $dir)
                             <option value="{{$dir->id}}">{{$dir->title}}</option>

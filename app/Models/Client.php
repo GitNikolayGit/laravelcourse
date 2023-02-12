@@ -17,7 +17,7 @@ class Client extends Model
         'address',         // прописка
     ];
     // связь с repair
-    public function repair(){
-        return $this->hasMany(Repair::class);
+    public function application(){
+        return $this->hasMany(Application::class);
     }
 }

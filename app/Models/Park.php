@@ -9,15 +9,16 @@ class Park extends Model
 {
     use HasFactory;
     protected $fillable = [
-        //'article',           // id марки модели неисправности
+        'modelcar_id',          // id - brand, model, defect, park
         'title',
         'price',
-       // 'brand',
-        //'modelCar',
-       // 'defect_id'
+        'defect_id'
     ];
-    // связь с машиной
-    public function car(){
-        return $this->hasMany(Defect::class);
+    public function  modelcar(){
+        return $this->belongsTo(Modelcar::class);
+    }
+    //
+    public function  defect(){
+        return $this->belongsTo(Defect::class);
     }
 }

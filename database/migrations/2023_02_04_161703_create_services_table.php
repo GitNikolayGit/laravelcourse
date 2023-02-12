@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->integer('time');
+            $table->double('time');
             $table->integer('price');
             $table->integer('defect_id');
             $table->timestamps();

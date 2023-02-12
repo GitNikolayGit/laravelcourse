@@ -68,3 +68,6 @@ Route::post('/park/edit/{id}', [\App\Http\Controllers\ParkController::class, 'ed
 
 // услуги
 Route::get('/service', [\App\Http\Controllers\ServiseController::class, 'index']);
+
+// заявка
+Route::get('/application/create', [\App\Http\Controllers\ApplicationController::class, 'create']);

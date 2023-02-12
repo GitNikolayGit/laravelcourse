@@ -22,9 +22,9 @@ class Car extends Model
         'color_id',       // цвет
         'defect_id',      // неисправности
     ];
-    // связь с ремонтом
-    public function repair(){
-        return $this->hasMany(Repair::class);
+    // связь с заявкой
+    public function application(){
+        return $this->hasMany(Application::class);
     }
     // модель
     public function  modelcar(){

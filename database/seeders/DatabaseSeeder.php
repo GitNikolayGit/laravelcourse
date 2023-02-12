@@ -515,114 +515,149 @@ class DatabaseSeeder extends Seeder
             // ходовая
             [
                 //'article'=>'4A0611701',
+                'modelcar_id'=>1,
                 'title'=>'Шланг тормозной',
                 'price'=>300,
+                'defect_id'=>5
             ],
             [
                 //'article'=>'4B0615601B',
+                'modelcar_id'=>1,
                 'title'=>'Тормозные диски',
                 'price'=>1200,
+                'defect_id'=>5
             ],
             [
                 //'article'=>'4D0698451C',
+                'modelcar_id'=>1,
                 'title'=>'Тормозные колодки',
                 'price'=>1200,
+                'defect_id'=>5
             ],
             // кузов
             [
                 //'article'=>'4F0821133A',
+                'modelcar_id'=>1,
                 'title'=>'Подкрылок передний',
                 'price'=>900,
+                'defect_id'=>4
             ],
             [
                 //'article'=>'4F0821103A',
+                'modelcar_id'=>1,
                 'title'=>'Крыло переднее',
                 'price'=>4500,
+                'defect_id'=>4
             ],
             [
                // 'article'=>'4F0941003A',
+                'modelcar_id'=>1,
                 'title'=>'Фара передняя',
                 'price'=>7900,
+                'defect_id'=>4
             ],
             // трансмиссия
             [
                 //'article'=>'623228500',
+                'modelcar_id'=>1,
                 'title'=>'Комплект сцепления',
                 'price'=>8000,
+                'defect_id'=>2
             ],
             [
                 //'article'=>'4E0498203',
+                'modelcar_id'=>1,
                 'title'=>'Комплект пыльника шруса',
                 'price'=>850,
+                'defect_id'=>2
             ],
             [
                 //'article'=>'4F0498099A',
+                'modelcar_id'=>1,
                 'title'=>'Шрус наружный',
                 'price'=>3000,
+                'defect_id'=>2
             ],
             // электрика
 
             [
                 //'article'=>'054905377',
+                'modelcar_id'=>1,
                 'title'=>'Датчик детонации',
                 'price'=> 600,
+                'defect_id'=>3
             ],
             [
                 //'article'=>'078919501C',
+                'modelcar_id'=>1,
                 'title'=>'Датчик температуры',      // id марки модели неисправности
                 'price'=> 200,
+                'defect_id'=>3
             ],
             [
                 //'article'=>'4B0927807',
+                'modelcar_id'=>1,
                 'title'=>'Датчик ABS',      // id марки модели неисправности
                 'price'=> 200,
+                'defect_id'=>3
             ],
             // двигатель
             [
-               // 'article'=>'000',          // id марки модели неисправности
+               // 'article'=>'000',
+                'modelcar_id'=>1,         // id марки модели неисправности
                 'title'=>'Ремень ГРМ',
-                'price'=> 7500
+                'price'=> 7500,
+                'defect_id'=>1
             ],
             [
                // 'article'=>'000',
+                'modelcar_id'=>1,
                 'title'=>'Кольца ДВС',
-                'price'=> 1500
+                'price'=> 1500,
+                'defect_id'=>1
             ],
             [
                 //'article'=>'000',
+                'modelcar_id'=>1,
                 'title'=>'Поршень',
                 'price'=> 7800,
+                'defect_id'=>1
             ],
             [
                // 'article'=>'000',
+                'modelcar_id'=>1,
                 'title'=>'Сальник распредвала',
                 'price'=> 300,
+                'defect_id'=>1
             ],
             [
                // 'article'=>'000',
+                'modelcar_id'=>1,
                 'title'=>'Прокладка крышки клапанов',
                 'price'=> 900,
+                'defect_id'=>1
             ],
             [
                 //'article'=>'000',
-                'title'=>'Сальники клапанов',    // id марки модели неисправности
+                'modelcar_id'=>1,
+                'title'=>'Сальники клапанов',
                 'price'=> 500,
+                'defect_id'=>1
             ],
-
-
-
-
+        ]);
+        DB::table('applications')->insert([
+            'client_id'=>1,
+            'car_id'=>1,
+            'date_start'=>'2022-03-11'
         ]);
 
         DB::table('repairs')->insert([
             [
-                'service_id'=>1,        // оказанная услуга
-                'car_id'=>1,
+                'application_id'=>1,        // оказанная услуга
+                'service_id'=>1,
                 'worker_id'=>3,
-                'client_id'=>1,
                 'park_id'=>1,
-                //'datestart' ,         // поставка на ремонт
-                //'datereturn',
+                'time_work'=>1,
             ]
         ]);
     }

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ParkRequest;
+use App\Models\Modelcar;
 use App\Models\Park;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ParkController extends Controller
 {
@@ -19,11 +21,15 @@ class ParkController extends Controller
         return view('park.create');
     }
     public function create_res(ParkRequest $req){
-        $temp = DB::table('parks')
-            ->where('title', '=', $req->input('title'))
-            ->where('price', '=', $req->input('price'))->value('id');
+        // артикул: brand, model, defect, номер детали
+        $art = $req->input(Modelcar::find($req->input('model'))->value('brand_id')->get())
+            .$req->input('model').$req->input('defect');
+        $temp = DB::table('parks')->where('article', $art)
+            ->where('title', $req->input('article'))->get();
+
         if ($temp == null) {
             $park = new Park();
+            $park->atricle = $art.Park::all()->count() + 1;
             $park->title = $req->input('title');
             $park->price = $req->input('price');
             $park->save();
@@ -49,6 +55,7 @@ class ParkController extends Controller
 
     public function edit_res(ParkRequest $req, int $id){
         $park = Park::all()->find($id);
+        $park->article = $req->input('article');
         $park->title = $req->input('title');
         $park->price = $req->input('price');
         $park->save();

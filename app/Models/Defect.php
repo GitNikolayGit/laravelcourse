@@ -22,4 +22,7 @@ class Defect extends Model
     public function service(){
         return $this->hasMany(Service::class);
     }
+    public function park(){
+        return $this->hasMany(Park::class);
+    }
 }

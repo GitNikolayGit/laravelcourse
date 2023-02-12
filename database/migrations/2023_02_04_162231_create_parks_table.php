@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('parks', function (Blueprint $table) {
             $table->id();
+            $table->integer('modelcar_id');
             $table->string('title');
             $table->integer('price');
+            $table->integer('defect_id');
             $table->timestamps();
         });
     }

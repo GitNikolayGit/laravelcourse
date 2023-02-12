@@ -30,7 +30,7 @@
 
 </main>
 <div class="fixed-bottom bg-light">
-    <a class="btn btn btn btn-secondary m-3" href="/repair/create">Заявка</a>
+    <a class="btn btn btn btn-secondary m-3" href="/application">Заявка</a>
     <a class="btn btn btn btn-secondary m-3" href="/repair">Ремонт</a>
     <a class="btn btn btn btn-secondary m-3" href="/">Машины</a>
     <a class="btn btn btn btn-secondary m-3" href="/client">Клиенты</a>

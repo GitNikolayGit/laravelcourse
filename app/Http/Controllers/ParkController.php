@@ -19,8 +19,9 @@ class ParkController extends Controller
         return view('park.create');
     }
     public function create_res(ParkRequest $req){
-        $temp = DB::table('parks')->where('title', $req->input('title'
-            && 'price', $req->input('price')))->value('id');
+        $temp = DB::table('parks')
+            ->where('title', '=', $req->input('title'))
+            ->where('price', '=', $req->input('price'))->value('id');
         if ($temp == null) {
             $park = new Park();
             $park->title = $req->input('title');
@@ -29,7 +30,7 @@ class ParkController extends Controller
             $file = $req->file('photo');
             if ($file != null){
                 $id = Park::all()->last()->id;
-                $file->storePubliclyAs('public/images/park', $id.'.jpg');
+                $file->storePubliclyAs('public/images/park',$id.'.jpg');
             }
             return redirect()->action([ParkController::class, 'index'])
                 ->with('success', "Была добавлена запчасть");

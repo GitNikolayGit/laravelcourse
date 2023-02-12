@@ -28,10 +28,8 @@
         @foreach($clients as $client)
             <tr>
                 <td>{{$client->id}}</td>
-                <td><img style="height: 80px"
-                         src="{{asset("storage/images/person/$client->id.jpg")}}"
-                         alt="фото фильма">
-                </td>
+                <td><img style="height: 80px" src="{{asset(file_exists("storage/images/person/".$client->id.".jpg")
+                  ? "storage/images/person/".$client->id.".jpg" : "storage/images/person/noo.jpg")}}" alt="фото клиента"></td>
                 <td>{{$client->surname}}</td>
                 <td>{{$client->firstName}}</td>
                 <td>{{$client->patronymic}}</td>

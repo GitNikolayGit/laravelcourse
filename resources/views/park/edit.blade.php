@@ -37,7 +37,8 @@
         </div>
         <div class="col-sm-5 bg-light">
             <h6>Фото</h6>
-            <img  style="height: 350px" src="{{asset("storage/images/park/".$park->id.".jpg")}}" alt="фото запчасти">
+            <img style="height: 350px" src="{{asset(file_exists("storage/images/park/".$park->id.".jpg")
+                  ? "storage/images/park/".$park->id.".jpg" : "storage/images/park/noo.jpg")}}" alt="фото запчасти">
         </div>
     </div>
 @endsection

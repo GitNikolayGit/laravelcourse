@@ -24,7 +24,8 @@
         @foreach($parks as $park)
             <tr>
                 <td>{{$park->id}}</td>
-                <td><img style="height: 80px" src="{{asset("storage/images/park/".$park->id.".jpg")}}" alt="фото запчасти">
+                <td><img style="height: 80px" src="{{asset(file_exists("storage/images/park/".$park->id.".jpg")
+                  ? "storage/images/park/".$park->id.".jpg" : "storage/images/park/noo.jpg")}}" alt="фото запчасти">
                 </td>
                 <td>{{$park->title}}</td>
                 <td>{{$park->price}}</td>

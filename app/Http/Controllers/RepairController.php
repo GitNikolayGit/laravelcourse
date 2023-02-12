@@ -22,11 +22,7 @@ class RepairController extends Controller
         return view('repair.create');
     }
     public function create_res(ApplicationRequest $req){
-        //dd($req->input('service'));
-
-
         $temp = DB::table('clients')->where('passport', $req->input('passport'))->value('id');
-        //dd($temp);
         if ($temp == null) {
             $client = new Client();
             $client->surname = $req->input('surname');
@@ -38,9 +34,11 @@ class RepairController extends Controller
             $client->save();
             $file = $req->file('photo-client');
             if ($file != null){
-                //$id = Client::all()->last()->id;
                 $id = DB::table('clients')->where('passport', $req->input('passport'))->value('id');
                 $file->storePubliclyAs('public/images/person', $id.'.jpg');
+            }
+            else {
+                $file->storePubliclyAs('public/images/person','noo.jpg');
             }
         }
 

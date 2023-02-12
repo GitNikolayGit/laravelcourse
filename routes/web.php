@@ -28,6 +28,8 @@ Route::post('car/create', [CarController::class, 'create']);
 Route::post('/car/add_color', [CarController::class, 'add_color']);
 // добавление бренда
 Route::post('/car/add_brand', [CarController::class, 'add_brand']);
+// добавление модели
+Route::post('/car/add_model', [CarController::class, 'add_model']);
 
 // клиент
 Route::get('/client', [ClientController::class, 'index']);

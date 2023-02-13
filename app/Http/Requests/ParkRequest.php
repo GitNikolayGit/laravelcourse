@@ -24,17 +24,21 @@ class ParkRequest extends FormRequest
     public function rules()
     {
         return [
+            'modelcar_id' => 'required',
             'title' => 'required',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
+            'defect_id' => 'required',
         ];
     }
 
     public function messages()
     {
         return [
+            'modelcar_id.required' => 'поле модель должно быть заполнено',
             'title.required' => 'поле наименование должно быть заполнено',
             'price.required' => 'поле цена должно быть заполнено',
             'price.numeric' => 'в поле цена должно быть число',
+            'defect_id.required' => 'поле категория должно быть заполнено',
         ];
     }
 }

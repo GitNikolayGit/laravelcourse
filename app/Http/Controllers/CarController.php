@@ -40,7 +40,7 @@ class CarController extends Controller
     }
     // добавление цвета
     public function add_color(ColorRequest $req){
-        $temp = DB::table('colors')->where('title', $req->input('color'));
+        $temp = DB::table('colors')->where('title', $req->input('color'))->value('id');
         if ($temp == null) {
             $color = new Color();
             $color->title = $req->input('color');

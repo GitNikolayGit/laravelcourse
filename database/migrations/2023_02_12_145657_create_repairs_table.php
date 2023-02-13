@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('park_id')->nullable();
             $table->integer('price')->nullable();
             $table->double('time_work')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

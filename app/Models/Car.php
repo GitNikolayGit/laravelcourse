@@ -9,7 +9,8 @@ class Car extends Model
 {
     use HasFactory;
     protected $with = [
-        'defect'
+        'defect',
+        'modelcar'
     ];
     protected $fillable = [
         'date',           // год выпуска

@@ -71,4 +71,6 @@ Route::get('/service', [\App\Http\Controllers\ServiseController::class, 'index']
 
 // заявка
 Route::get('/application', [\App\Http\Controllers\ApplicationController::class, 'index']);
+// добавление
 Route::get('/application/create', [\App\Http\Controllers\ApplicationController::class, 'create']);
+Route::post('/application/create', [\App\Http\Controllers\ApplicationController::class, 'create_res']);

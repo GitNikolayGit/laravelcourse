@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+    <p></p>
     <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/worker/create">принять на работу</a>
 @endsection
 

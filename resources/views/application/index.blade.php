@@ -5,7 +5,8 @@
 @endsection
 
 @section('content')
-
+    <p></p>
+    <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/application/create">добавить заявку</a>
 @endsection
 
 @section('content2')
@@ -29,8 +30,8 @@
         @foreach($applications as $appl)
             <tr>
                 <td>{{$appl->id}}</td>
-                <td><img style="height: 80px" src="{{asset(file_exists("storage/images/avto/".$appl->car->modelcar->brand_id.$appl->car_id.".jpg")
-                  ? "storage/images/avto/".$appl->car->modelcar->brand_id.$appl->car_id.".jpg" : "storage/images/avto/noo.jpg")}}" alt="фото машины"></td>
+                <td><img style="height: 80px" src="{{asset(file_exists("storage/images/avto/".$appl->car->modelcar->brand_id.$appl->car->modelcar_id.".jpg")
+                  ? "storage/images/avto/".$appl->car->modelcar->brand_id.$appl->car->modelcar_id.".jpg" : "storage/images/avto/noo.jpg")}}" alt="фото машины"></td>
                 <td>{{$appl->car->modelcar->brand->title. ' '. $appl->car->modelcar->title}}</td>
                 <td>{{$appl->car->num}}</td>
                 <td>{{$appl->car->defect->title}}</td>

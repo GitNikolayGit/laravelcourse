@@ -21,17 +21,17 @@ class ParkController extends Controller
         return view('park.create');
     }
     public function create_res(ParkRequest $req){
-        // артикул: brand, model, defect, номер детали
-        $art = $req->input(Modelcar::find($req->input('model'))->value('brand_id')->get())
-            .$req->input('model').$req->input('defect');
-        $temp = DB::table('parks')->where('article', $art)
-            ->where('title', $req->input('article'))->get();
+        $temp = DB::table('parks')->where('modelcar_id', $req->input('model'))
+            ->where('title', $req->input('title'))
+            ->where('price', $req->input('price'))
+            ->where('defect_id', $req->input('defect'))->value('id');
 
         if ($temp == null) {
             $park = new Park();
-            $park->atricle = $art.Park::all()->count() + 1;
+            $park->modelcar_id = $req->input('model');
             $park->title = $req->input('title');
             $park->price = $req->input('price');
+            $park->defect_id = $req->input('defect');
             $park->save();
             $file = $req->file('photo');
             if ($file != null){
@@ -55,7 +55,6 @@ class ParkController extends Controller
 
     public function edit_res(ParkRequest $req, int $id){
         $park = Park::all()->find($id);
-        $park->article = $req->input('article');
         $park->title = $req->input('title');
         $park->price = $req->input('price');
         $park->save();

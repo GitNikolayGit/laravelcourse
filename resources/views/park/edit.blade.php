@@ -16,8 +16,17 @@
                   enctype="multipart/form-data">
                 @csrf
                 <div class="mb-1">
+                    <label for="title">Модель</label>
+                    <input type="text" readonly class="form-control" id="model" name="model"
+                           value="{{$park->modelcar->brand->title.' '.$park->modelcar->title}}">
+                </div>
+                <div class="mb-1">
+                    <label for="title">Категория</label>
+                    <input type="text" readonly class="form-control" id="defect" name="defect" value="{{$park->defect->title}}">
+                </div>
+                <div class="mb-1">
                     <label for="title">Наименование</label>
-                    <input type="text" readonly class="form-control" id="title" name="title" value="{{$park->title}}">
+                    <input type="text" class="form-control" id="title" name="title" value="{{$park->title}}">
                 </div>
                 <div class="mb-1">
                     <label for="price">Цена</label>

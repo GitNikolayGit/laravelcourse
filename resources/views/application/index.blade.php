@@ -10,7 +10,7 @@
 
 @section('content2')
     <table class="table table-striped caption-top">
-        <caption>ремонт</caption>
+        <caption>заявки</caption>
         <thead>
         <tr>
             <th>id</th>

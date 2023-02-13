@@ -18,24 +18,23 @@
                   enctype="multipart/form-data">
                 @csrf
                 <div class="mb-1">
-                    <label for="title">Модель</label>
-                    <input type="text" placeholder="название детали" class="form-control" id="title" name="title"
-                           value="{{old('title')}}">
-                </div>
-
-                <div class="mb-1">
-                    <label for="model"><h6>Модель</h6></label>
+                    <label for="model">Модель</label>
                     <select class="form-control" id="model" name="model">
                         <option></option>
-                        @foreach(\App\Models\Modelcar::with('brand') as $dir)
+                        @foreach(\App\Models\Modelcar::with('brand')->get() as $dir)
                             <option value="{{$dir->id}}">{{$dir->brand->title. ' '.$dir->title}}</option>
                         @endforeach
                     </select>
                 </div>
-
-
-
-
+                <div class="mb-1">
+                    <label for="defect">Категория</label>
+                    <select class="form-control" id="defect" name="defect">
+                        <option></option>
+                        @foreach(\App\Models\Defect::all() as $dir)
+                            <option value="{{$dir->id}}">{{$dir->title}}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class="mb-1">
                     <label for="title">Наименование</label>
                     <input type="text" placeholder="название детали" class="form-control" id="title" name="title"

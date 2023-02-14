@@ -12,14 +12,15 @@ class ServiseController extends Controller
         return view('service.index', ['services' => Service::with('defect')->get()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(Request $req)
     {
-        //
+        $service = new Service();
+        $service->title = $req->input('title');
+        $service->time = $req->input('time');
+        $service->price = $req->input('defect');
+        $service->defect_id = $req->input('defect');
+        $service->save();
+        return back()->with('success', 'была добавлена деталь');
     }
 
     /**

@@ -72,6 +72,7 @@ Route::post('/park/edit/{id}', [ParkController::class, 'edit_res']);
 
 // услуги
 Route::get('/service', [ServiseController::class, 'index']);
+Route::post('/service/create', [ServiseController::class, 'create']);
 
 // заявка
 Route::get('/application', [ApplicationController::class, 'index']);

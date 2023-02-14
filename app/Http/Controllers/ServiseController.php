@@ -23,15 +23,11 @@ class ServiseController extends Controller
         return back()->with('success', 'была добавлена деталь');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function sort(Request $req)
     {
-        //
+        ;
+        return view('service.index', ['services' => Service::all()
+            ->where('defect_id', $req->input('defect'))]);
     }
 
     /**

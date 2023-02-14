@@ -66,8 +66,6 @@
                 </div>
             </div>
         </div>
-        <!-- добавление запчасти -->
-        <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/park/create">Добавить запчасть</a>
 
 
     </div>

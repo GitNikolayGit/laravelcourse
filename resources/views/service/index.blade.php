@@ -5,6 +5,45 @@
 @endsection
 
 @section('content')
+    <p></p>
+    <div class=" m-1 p-1">
+        <div id="accordion">
+            <!-- добавление цвета -->
+            <div class="card">
+                <div class="card-header">
+                    <a class="btn w-100" data-bs-toggle="collapse" href="#collapseOne">
+                        Выборка
+                    </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                    <div class="card-body">
+
+                            <div class="mt-3">
+                                <a class="btn btn btn btn-outline-success w-100 m-1" href="/service">все запчасти</a>
+                            </div>
+                    </div>
+
+                    <div class="card-body">
+                        <form class="p3 bg-light text-center w-100" action="/service/sort" method="post">
+                            @csrf
+                            <div class="mb-1">
+                                <label for="defect">По категориям</label>
+                                <select required class="form-control" id="defect" name="defect">
+                                    <option></option>
+                                    @foreach(\App\Models\Defect::all() as $dir)
+                                        <option value="{{$dir->id}}">{{$dir->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-outline-success w-100">Выбрать</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
 

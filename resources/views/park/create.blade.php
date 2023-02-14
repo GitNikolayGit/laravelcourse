@@ -19,7 +19,7 @@
                 @csrf
                 <div class="mb-1">
                     <label for="model">Модель</label>
-                    <select class="form-control" id="model" name="model">
+                    <select required class="form-control" id="model" name="model">
                         <option></option>
                         @foreach(\App\Models\Modelcar::with('brand')->get() as $dir)
                             <option value="{{$dir->id}}">{{$dir->brand->title. ' '.$dir->title}}</option>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="mb-1">
                     <label for="defect">Категория</label>
-                    <select class="form-control" id="defect" name="defect">
+                    <select required class="form-control" id="defect" name="defect">
                         <option></option>
                         @foreach(\App\Models\Defect::all() as $dir)
                             <option value="{{$dir->id}}">{{$dir->title}}</option>
@@ -37,12 +37,12 @@
                 </div>
                 <div class="mb-1">
                     <label for="title">Наименование</label>
-                    <input type="text" placeholder="название детали" class="form-control" id="title" name="title"
+                    <input required type="text" placeholder="название детали" class="form-control" id="title" name="title"
                            value="{{old('title')}}">
                 </div>
                 <div class="mb-1">
                     <label for="price">Цена</label>
-                    <input type="text" placeholder="цена" class="form-control" id="price" name="price"
+                    <input required type="text" placeholder="цена" class="form-control" id="price" name="price"
                                                       value="{{old('price')}}">
                 </div>
                 <div class="mb-1">

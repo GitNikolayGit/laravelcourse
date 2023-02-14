@@ -36,13 +36,13 @@
                 </div>
                 <div class="mb-1">
                     <label for="experience">Стаж</label>
-                    <input type="text" readonly class="form-control" id="experience" name="experience"
+                    <input type="text" class="form-control" id="experience" name="experience"
                            value="{{$worker->experience}}">
                 </div>
 
                 <div class="mb-1">
                     <label for="profession">Профессия</label>
-                    <input type="text" class="form-control" id="profession" name="profession"
+                    <input type="text" readonly class="form-control" id="profession" name="profession"
                            value="{{$worker->profession->title}}">
                 </div>
                 <div class="mt-3">

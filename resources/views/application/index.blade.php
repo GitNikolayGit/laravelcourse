@@ -24,6 +24,7 @@
             <th>Паспорт</th>
             <th>Дата приема</th>
             <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -41,8 +42,13 @@
                 <td>{{$appl->client->passport}}</td>
                 <td>{{$appl->date_start}}</td>
                 <td class="text-center">
-                    <a class="btn btn-success" href="/client/edit/{{$appl->id}}" title="Изменить...">
+                    <a class="btn btn-outline-success" href="/client/edit/{{$appl->id}}" title="Изменить...">
                         <i class="bi bi-pencil"></i>
+                    </a>
+                </td>
+                <td class="text-center">
+                    <a class="btn btn-success" href="/repair/create/{{$appl->id}}" title="Ремонт добавить">
+                        ремонт
                     </a>
                 </td>
             </tr>

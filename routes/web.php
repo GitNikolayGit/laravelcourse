@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ParkController;
 use App\Http\Controllers\RepairController;
+use App\Http\Controllers\ServiseController;
+use App\Http\Controllers\WorkerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,36 +45,36 @@ Route::post('/client/edit/{id}', [ClientController::class, 'edit_res']);
 Route::post('/client/create', [ClientController::class, 'create']);
 
 // ремонт
-Route::get('/repair', [RepairController::class, 'index']);
+//Route::get('/repair', [RepairController::class, 'index']);
 // заявки
-Route::get('/repair/create', [RepairController::class, 'create']);
-Route::post('/repair/create', [RepairController::class, 'create_res']);
+Route::get('/repair/create/{id}', [RepairController::class, 'create']);
+Route::post('/repair/create/{id}', [RepairController::class, 'create_res']);
 
 // работники
-Route::get('/worker', [\App\Http\Controllers\WorkerController::class, 'index']);
+Route::get('/worker', [WorkerController::class, 'index']);
 // редактировать
-Route::get('/worker/edit/{id}', [\App\Http\Controllers\WorkerController::class, 'edit']);
-Route::post('/worker/edit/{id}', [\App\Http\Controllers\WorkerController::class, 'edit_res']);
+Route::get('/worker/edit/{id}', [WorkerController::class, 'edit']);
+Route::post('/worker/edit/{id}', [WorkerController::class, 'edit_res']);
 // удаление
-Route::get('/worker/delete/{id}', [\App\Http\Controllers\WorkerController::class, 'delete']);
+Route::get('/worker/delete/{id}', [WorkerController::class, 'delete']);
 // добавление
-Route::get('/worker/create', [\App\Http\Controllers\WorkerController::class, 'create']);
-Route::post('/worker/create', [\App\Http\Controllers\WorkerController::class, 'create_res']);
+Route::get('/worker/create', [WorkerController::class, 'create']);
+Route::post('/worker/create', [WorkerController::class, 'create_res']);
 
 // запчасти
-Route::get('/park', [\App\Http\Controllers\ParkController::class, 'index']);
+Route::get('/park', [ParkController::class, 'index']);
 // добавить
-Route::get('/park/create', [\App\Http\Controllers\ParkController::class, 'create']);
-Route::post('park/create', [\App\Http\Controllers\ParkController::class, 'create_res']);
+Route::get('/park/create', [ParkController::class, 'create']);
+Route::post('park/create', [ParkController::class, 'create_res']);
 // изменить
-Route::get('/park/edit/{id}', [\App\Http\Controllers\ParkController::class, 'edit']);
-Route::post('/park/edit/{id}', [\App\Http\Controllers\ParkController::class, 'edit_res']);
+Route::get('/park/edit/{id}', [ParkController::class, 'edit']);
+Route::post('/park/edit/{id}', [ParkController::class, 'edit_res']);
 
 // услуги
-Route::get('/service', [\App\Http\Controllers\ServiseController::class, 'index']);
+Route::get('/service', [ServiseController::class, 'index']);
 
 // заявка
-Route::get('/application', [\App\Http\Controllers\ApplicationController::class, 'index']);
+Route::get('/application', [ApplicationController::class, 'index']);
 // добавление
-Route::get('/application/create', [\App\Http\Controllers\ApplicationController::class, 'create']);
-Route::post('/application/create', [\App\Http\Controllers\ApplicationController::class, 'create_res']);
+Route::get('/application/create', [ApplicationController::class, 'create']);
+Route::post('/application/create', [ApplicationController::class, 'create_res']);

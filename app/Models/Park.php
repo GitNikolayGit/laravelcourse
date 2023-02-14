@@ -21,4 +21,8 @@ class Park extends Model
     public function  defect(){
         return $this->belongsTo(Defect::class);
     }
+    //
+    public function repair(){
+        return $this->hasMany(Park::class);
+    }
 }

@@ -26,6 +26,8 @@ Route::get('/car/edit/{id}', [CarController::class, 'edit']);
 Route::post('car/edit/{id}', [CarController::class, 'edit_res']);
 // добавление машины
 Route::post('car/create', [CarController::class, 'create']);
+//
+Route::post('/car/sort_model', [CarController::class, 'sort_model']);
 
 
 // добавление цвета
@@ -49,6 +51,8 @@ Route::post('/client/create', [ClientController::class, 'create']);
 // заявки
 Route::get('/repair/create/{id}', [RepairController::class, 'create']);
 Route::post('/repair/create/{id}', [RepairController::class, 'create_res']);
+// выдача справки
+Route::post('/repair/reception/{id}', [RepairController::class, 'reception']);
 
 // работники
 Route::get('/worker', [WorkerController::class, 'index']);

@@ -8,18 +8,17 @@
     <p></p>
     <div class=" m-1 p-1">
         <div id="accordion">
-            <!-- добавление цвета -->
+
             <div class="card">
                 <div class="card-header">
-                    <a class="btn w-100" data-bs-toggle="collapse" href="#collapseOne">
+                    <a class="btn w-100" data-bs-toggle="collapse" href="#collapseOn">
                         Выборка
                     </a>
                 </div>
-                <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                <div id="collapseOn" class="collapse show" data-bs-parent="#accordion">
                     <div class="card-body">
-
                             <div class="mt-3">
-                                <a class="btn btn btn btn-outline-success w-100 m-1" href="/service">все запчасти</a>
+                                <a class="btn btn btn btn-outline-success w-100 m-1" href="/service">все услуги</a>
                             </div>
                     </div>
 
@@ -51,7 +50,7 @@
     <div class="col-sm p-1 row">
         <div class="col-sm-7 p-1 bg-light ">
             <table  class="table table-striped caption-top">
-                <caption>запчасти</caption>
+                <caption>услуги</caption>
                 <thead>
                     <tr>
                         <th>id</th>
@@ -85,7 +84,7 @@
             <div class="card">
                 <div class="card-header">
                     <a class="btn w-100" data-bs-toggle="collapse" href="#collapseOne">
-                        Добавить запчасть
+                        Добавить услугу
                     </a>
                 </div>
                 <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
@@ -118,7 +117,7 @@
                             </div>
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-outline-success">Добавить</button>
-                                <a href="{{url()->previous()}}" class="btn btn-outline-success">Отмена</a>
+                                <a href="{{url()->previous()}}" class="btn btn-outline-success">Сбросить</a>
                             </div>
                         </form>
                     </div>

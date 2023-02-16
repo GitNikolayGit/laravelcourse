@@ -52,21 +52,26 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!-- выдача справки -->
-        <div class="card">
-            <div class="card-header">
-                <a class="collapsed btn w-100" data-bs-toggle="collapse" href="#collapseF">
-                    Справки
-                </a>
-            </div>
-            <div id="collapseF" class="collapse" data-bs-parent="#accordion">
-                <div class="card-body">
+            <div class="card">
+                <div class="card-header">
+                    <a class="btn w-100" data-bs-toggle="collapse" href="#collapseT">
+                        Справки
+                    </a>
+                </div>
+                <div id="collapseT" class="collapse show" data-bs-parent="#accordion">
+                    <div class="card-body">
 
+                        <form class="p3 bg-light text-center w-100" action="/repair/reception/{{$applications->id}}" method="post">
+                            @csrf
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-outline-success">О приеме</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-
+        <!-- выдача справки -->
 
     </div>
 @endsection

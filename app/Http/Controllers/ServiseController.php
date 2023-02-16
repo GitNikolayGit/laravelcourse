@@ -25,7 +25,6 @@ class ServiseController extends Controller
 
     public function sort(Request $req)
     {
-        ;
         return view('service.index', ['services' => Service::all()
             ->where('defect_id', $req->input('defect'))]);
     }

@@ -9,6 +9,7 @@ use App\Models\Brand;
 use App\Models\Car;
 use App\Models\Color;
 use App\Models\Defect;
+use App\Models\Modelcar;
 use Illuminate\Http\Request;
 use App\Http\Requests\CarRequest;
 use Illuminate\Support\Facades\DB;
@@ -54,7 +55,7 @@ class CarController extends Controller
     }
     // добавление бренда
     public function add_brand(BrandRequest $req){
-        $temp = DB::table('brands')->where('title', $req->input('brand'));
+        $temp = DB::table('brands')->where('title', $req->input('brand'))->value('id');
         if ($temp == null) {
             $brand = new Brand();
             $brand->title = $req->input('brand');
@@ -67,10 +68,25 @@ class CarController extends Controller
     }
     // добавление модели
     public function add_model(ModelRequest $req){
-        $temp = DB::table('modelcars')->where('title', $req->input('model'));
+        $temp = DB::table('modelcars')
+            ->where('title', $req->input('model') && 'brane_id', $req->input('brand'))
+            ->value('id');
+        if ($temp == null) {
+            $model = new Modelcar();
+            $model->brand_id = $req->input('brand');
+            $model->title = $req->input('model');
+            $model->save();
+            return back()->with('success', 'Была добавлена модель');
+        }
+        else{
+            return back()->with('success', 'Такая модель уже есть');
+        }
     }
 
-    public function sort_brand(){
-        return view('car.index.blade.php');
+    // выборка по модели
+    public function sort_model(Request $req){
+        return view('car.index', ['cars' => Car::all()
+            ->where('modelcar_id', $req->input('model'))]);
+
     }
 }

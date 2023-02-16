@@ -2,6 +2,8 @@ h1, h2, h6 {
     color:darkblue;
 }
 
+.dont-print-that{display:none;}
+
 main {
     min-height: 550px;
 }

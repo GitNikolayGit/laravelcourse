@@ -99,11 +99,11 @@
                             </div>
                             <div class="mb-1">
                                 <label for="time">время</label>
-                                <input type="text" placeholder="время на работу 0.00" class="form-control" id="time" name="time"
-                                                                 value="{{old('time')}}">
+                                <input type="time" class="form-control" id="time" name="time"
+                                       value="{{old('time')}}">
                             </div>
                             <div class="mb-1">
-                                <label for="price">цена</label><input type="text" placeholder="цена" class="form-control" id="price" name="price"
+                                <label for="price">цена</label><input type="number" placeholder="цена" class="form-control" id="price" name="price"
                                                                   value="{{old('price')}}">
                             </div>
                             <div class="mb-1">

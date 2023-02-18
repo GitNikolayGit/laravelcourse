@@ -53,6 +53,7 @@ Route::get('/repair/create/{id}', [RepairController::class, 'create']);
 Route::post('/repair/create/{id}', [RepairController::class, 'create_res']);
 // выдача справки
 Route::post('/repair/reception/{id}', [RepairController::class, 'reception']);
+Route::post('/repair/reception_return/{id}', [RepairController::class, 'reception_return']);
 
 // работники
 Route::get('/worker', [WorkerController::class, 'index']);

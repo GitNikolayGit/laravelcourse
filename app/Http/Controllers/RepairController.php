@@ -9,6 +9,7 @@ use App\Models\Client;
 use App\Models\Repair;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -30,7 +31,6 @@ class RepairController extends Controller
         return view('repair.create', ['applications' => Application::find($id)]);
     }
     public function create_res(Request $req, int $id ){
-
         $repair = new Repair();
         $repair->application_id = $id;
         $repair->service_id = $req->input('service');
@@ -39,40 +39,33 @@ class RepairController extends Controller
         $repair->save();
         return redirect()->back();
     }
-        //return redirect()->action([RepairController::class, 'index'])
-        //    ->with('success', "Была добавлена заявка");
-    // 'application_id',    // номер заявки
-    //        'service_id',        // оказанная услуга
-    //        'worker_id',         // работник
-    //        'park_id',           // запчасть
-    //        'price',
-    //        'time_work',
 
     // справка о приеме
     public function reception(int $id){
-        $repairs = Repair::all()->where('application_id', $id);
-        $date_start = $repairs->first()->application->date_start;
-       // $str = ' Номер заявки: '.$repairs->first()->application->id
-        //.' Дата приема: '.$repairs->first()->application->date_start
-        //.' Неисправность: '.$repairs->first()->application->car->defect->title;
-        $count = 0.0;
+        $repairs = Repair::where('application_id', $id)->get();
+        $time = new Carbon($repairs->first()->application->created_at);
         foreach ($repairs as $rep){
-            $count += $rep->service->time;
+            $str = explode(':', $rep->service->time);
+            $time->addHours((int)$str[0]);
+            $time->addMinutes((int)$str[1]);
         }
-        //$str .= ' время потраченное на ремонт '.$count;
-
-        $str = "
-        Номер заявки : {$repairs->first()->application->id}
-        Дата приема: {$repairs->first()->application->date_start}
-        Неисправность: {$repairs->first()->application->car->defect->title}
-            ";
-        return view('repair.reception', ['repairs' => $repairs, 'count' => $count]);
-        //if (Storage::disk()->exists('date/reception.txt')){
-        //    dd('es');
-        //}
-        //else{
-        //    dd('noo');
-        //y}
-
+        return view('repair.reception', ['repairs' => $repairs, 'time' => $time]);
+    }
+    // справка о выдачи
+    public function reception_return(int $id){
+        $repairs = Repair::where('application_id', $id)->get();
+        $service = [];
+        $service_price = 0;
+        $park = [];
+        $price_park = 0;
+        $price = 0;
+        foreach ($repairs as $rep) {
+            $service[$rep->service->title ] = ['время'=>$rep->service->time, 'цена'=>$rep->service->price];// = $rep->service->title;
+            $service_price += $rep->service->price;
+            $park[$rep->park->title] = $rep->park->price;
+            $price += $rep->service->price + $rep->park->price;
+        }
+        return view('repair.reception_return',
+            ['repairs'=>$repairs, 'service'=>$service, 'park'=>$park, 'price'=>$price]);
     }
 }

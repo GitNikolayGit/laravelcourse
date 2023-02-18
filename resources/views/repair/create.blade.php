@@ -6,13 +6,14 @@
 
 @section('content')
     <div id="accordion">
+        <!-- добавление ремонта -->
         <div class="card">
             <div class="card-header">
-                <a class="btn w-100" data-bs-toggle="collapse" href="#collapseOne">
-                    Добавить ремонт
+                <a class="btn w-100" data-bs-toggle="collapse" href="#collapseRepair">
+                    <h6>Добавить ремонт</h6>
                 </a>
             </div>
-            <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+            <div id="collapseRepair" class="collapse show" data-bs-parent="#accordion">
                 <div class="card-body">
                     <form class="p3 bg-light text-center w-100" action="/repair/create/{{$applications->id}}" method="post">
                         @csrf
@@ -47,32 +48,38 @@
                             </select>
                         </div>
                         <div class="mt-3">
-                            <button type="submit" class="btn btn-outline-success">Добавить</button>
+                            <button type="submit" class="btn btn-outline-success w-100">Добавить</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <a class="btn w-100" data-bs-toggle="collapse" href="#collapseT">
-                        Справки
-                    </a>
+        </div>
+        <!-- справки -->
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed btn w-100" data-bs-toggle="collapse" href="#collapseReseption">
+                    <h6>Справки</h6>
+                </a>
+            </div>
+            <div id="collapseReseption" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+                    <form class="p3 bg-light text-center w-100" action="/repair/reception/{{$applications->id}}" method="post">
+                        @csrf
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-outline-success w-100">Прием</button>
+                        </div>
+                    </form>
                 </div>
-                <div id="collapseT" class="collapse show" data-bs-parent="#accordion">
-                    <div class="card-body">
-
-                        <form class="p3 bg-light text-center w-100" action="/repair/reception/{{$applications->id}}" method="post">
-                            @csrf
-                            <div class="mt-3">
-                                <button type="submit" class="btn btn-outline-success">О приеме</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="card-body">
+                    <form class="p3 bg-light text-center w-100" action="/repair/reception_return/{{$applications->id}}" method="post">
+                        @csrf
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-outline-success w-100">Выдача</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <!-- выдача справки -->
-
     </div>
 @endsection
 
@@ -104,17 +111,20 @@
     <table style="height: 350px">
     @foreach(\App\Models\Repair::all()->where('application_id', $applications->id) as $rep)
             <tr>
-                <td><b>Работник:</b> {{$rep->worker->surname.' '.$rep->worker->firtName.' '.$rep->worker->patronymic}}</td>
+                <td>Работник: <b>{{$rep->worker->surname.' '.$rep->worker->firtName.' '.$rep->worker->patronymic}}</b></td>
             </tr>
             <tr>
-                <td><b>Специальность:</b> {{$rep->worker->profession->title}}</td>
+                <td>Специальность: <b>{{$rep->worker->profession->title}}</b></td>
             </tr>
             <tr>
-                <td>Услуга: <b>{{$rep->service->title}}</b> <b>цена: {{$rep->service->price}}</b></td>
+                <td>Услуга: <b>{{$rep->service->title}}</b> цена: <b>{{$rep->service->price}}</b></td>
+            </tr>
+            <tr>
+                <td>Время: <b>{{$rep->service->time}}</b></td>
             </tr>
             <tr>
                 @if ($rep->park_id != null)
-                <td><b>Запчасть:</b> {{$rep->park->title}} <b>цена: {{$rep->park->price}}</b><hr></td>
+                <td>Запчасть: <b>{{$rep->park->title}}</b> цена: <b>{{$rep->park->price}}</b><hr></td>
                 @endif
             </tr>
 

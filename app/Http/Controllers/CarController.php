@@ -69,7 +69,7 @@ class CarController extends Controller
     // добавление модели
     public function add_model(ModelRequest $req){
         $temp = DB::table('modelcars')
-            ->where('title', $req->input('model') && 'brane_id', $req->input('brand'))
+            ->where('title', $req->input('model') && 'brand_id', $req->input('brand'))
             ->value('id');
         if ($temp == null) {
             $model = new Modelcar();

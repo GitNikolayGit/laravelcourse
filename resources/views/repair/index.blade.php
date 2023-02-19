@@ -5,7 +5,42 @@
 @endsection
 
 @section('content')
+    <div class=" m-1 p-1">
+        <div id="accordion">
 
+            <div class="card">
+                <div class="card-header">
+                    <a class="btn w-100" data-bs-toggle="collapse" href="#collapseOn">
+                        Поиск
+                    </a>
+                </div>
+                <div id="collapseOn" class="collapse show" data-bs-parent="#accordion">
+                    <div class="card-body">
+                        <div  >
+                            <a class="btn btn btn btn-outline-success w-100  " href="/repair">все ремонты</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form class="p3 bg-light text-center w-100" action="/repair/select_num" method="post">
+                            @csrf
+                            <div class="mb-1">
+                                <label for="appl">По номеру заявки</label>
+                                <select required class="form-control" id="appl" name="appl">
+                                    <option></option>
+                                    @foreach(\App\Models\Application::all() as $dir)
+                                        <option value="{{$dir->id}}">{{$dir->id}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-outline-success w-100">Выбрать</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('content2')
@@ -13,7 +48,7 @@
         <caption>ремонт</caption>
         <thead>
         <tr>
-            <th>id</th>
+            <th>Заявка</th>
             <th>Неисправность</th>
             <th>Модель</th>
             <th>Номер</th>
@@ -28,7 +63,7 @@
         <tbody>
         @foreach($repairs as $repair)
             <tr>
-                <td>{{$repair->id}}</td>
+                <td>{{$repair->application->id}}</td>
                 <td>{{$repair->application->car->defect->title}}</td>
 
                 <td>{{$repair->application->car->modelcar->brand->title. ' '.$repair->application->car->modelcar->title}}</td>

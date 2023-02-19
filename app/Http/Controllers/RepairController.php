@@ -39,6 +39,11 @@ class RepairController extends Controller
         $repair->save();
         return redirect()->back();
     }
+    // выборка по номеру машины
+    public function select_num(Request $req){
+        $repairs = Repair::where('application_id', $req->input('appl'))->get();
+        return view('repair.index', ['repairs' =>  $repairs]);
+    }
 
     // справка о приеме
     public function reception(int $id){

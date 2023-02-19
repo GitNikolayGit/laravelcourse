@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-header">
                     <a class="btn w-100" data-bs-toggle="collapse" href="#collapseOne">
-                        Клиент
+                        <h6>Клиент</h6>
                     </a>
                 </div>
                 <div id="collapseOne" class="collapse show" data-bs-parent="#accordion2">
@@ -62,7 +62,7 @@
             <div class="card">
                 <div class="card-header">
                     <a class="collapsed btn w-100" data-bs-toggle="collapse" href="#collapseTwo">
-                        Машина
+                        <h6>Машина</h6>
                     </a>
                 </div>
                 <div id="collapseTwo" class="collapse" data-bs-parent="#accordion2">
@@ -121,8 +121,6 @@
             <div class="mt-3">
                 <button type="submit" class="btn btn-outline-success">Добавить</button>
             </div>
-
-
         </div>
     </div>
     </form>
@@ -135,7 +133,7 @@
                     <div class="card">
                         <div class="card-header">
                             <a class="btn w-100" data-bs-toggle="collapse" href="#collapseColor">
-                                Добавить цвет
+                                <h6>Добавить цвет</h6>
                             </a>
                         </div>
                         <div id="collapseColor" class="collapse show" data-bs-parent="#accordion">
@@ -156,7 +154,7 @@
                     <div class="card">
                         <div class="card-header">
                             <a class="collapsed btn w-100" data-bs-toggle="collapse" href="#collapseBrand">
-                                Добавить марку
+                                <h6>Добавить марку</h6>
                             </a>
                         </div>
                         <div id="collapseBrand" class="collapse" data-bs-parent="#accordion">
@@ -177,14 +175,13 @@
                     <div class="card">
                         <div class="card-header">
                             <a class="collapsed btn w-100" data-bs-toggle="collapse" href="#collapseModel">
-                                Добавить модель
+                                <h6>Добавить модель</h6>
                             </a>
                         </div>
                         <div id="collapseModel" class="collapse" data-bs-parent="#accordion">
                             <div class="card-body">
                                 <form class="p3 bg-light text-center w-100" action="/car/add_model" method="post" enctype="multipart/form-data">
                                     @csrf
-
                                     <div class="mb-1">
                                         <label for="brand">Марка</label>
                                         <select required class="form-control" id="brand" name="brand">

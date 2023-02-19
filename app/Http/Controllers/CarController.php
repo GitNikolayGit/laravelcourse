@@ -28,7 +28,7 @@ class CarController extends Controller
     }
     // редактирование машины
     public function edit_res(CarRequest $req, int $id){
-        $car = Car::all()->find($id);
+        $car = Car::find($id);
         $car->num = $req->input('num');
         $car->surname = $req->input('surname');
         $car->firstName = $req->input('firstName');

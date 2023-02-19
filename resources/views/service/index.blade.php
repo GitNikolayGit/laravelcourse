@@ -70,7 +70,7 @@
                         <td>{{$service->price}}</td>
                         <td>{{$service->defect->title}}</td>
                         <td class="text-center">
-                            <a class="btn btn-outline-success" href="/park/edit/{{$service->id}}" title="Изменить...">
+                            <a class="btn btn-outline-success" href="/service/edit/{{$service->id}}" title="Изменить...">
                                 <i class="bi bi-pencil"></i>
                             </a>
                         </td>

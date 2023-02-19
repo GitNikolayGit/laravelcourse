@@ -23,7 +23,7 @@ class RepairController extends Controller
 {
     public function index()
     {
-        return view('repair.index', ['repairs'=>Repair::with(['service', 'car', 'client', 'park'])->get()]);
+        return view('repair.index', ['repairs'=>Repair::all()]);
     }
     // оформление заявки
     public function create(int $id)

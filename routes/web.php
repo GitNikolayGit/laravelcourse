@@ -47,7 +47,7 @@ Route::post('/client/edit/{id}', [ClientController::class, 'edit_res']);
 Route::post('/client/create', [ClientController::class, 'create']);
 
 // ремонт
-//Route::get('/repair', [RepairController::class, 'index']);
+Route::get('/repair', [RepairController::class, 'index']);
 // заявки
 Route::get('/repair/create/{id}', [RepairController::class, 'create']);
 Route::post('/repair/create/{id}', [RepairController::class, 'create_res']);
@@ -79,6 +79,9 @@ Route::post('/park/edit/{id}', [ParkController::class, 'edit_res']);
 Route::get('/service', [ServiseController::class, 'index']);
 Route::post('/service/create', [ServiseController::class, 'create']);
 Route::post('/service/sort', [ServiseController::class, 'sort']);
+Route::get('/service/edit/{id}', [ServiseController::class, 'edit']);
+Route::post('/service/edit/{id}', [ServiseController::class, 'edit_res']);
+
 
 // заявка
 Route::get('/application', [ApplicationController::class, 'index']);

@@ -21,7 +21,7 @@
             <th>Клиент</th>
             <th>Запчасть</th>
             <th>Сервис</th>
-            <th>Дата возврата</th>
+            <th>Время работы</th>
             <th></th>
         </tr>
         </thead>
@@ -29,15 +29,15 @@
         @foreach($repairs as $repair)
             <tr>
                 <td>{{$repair->id}}</td>
-                <td>{{$repair->car->defect->title}}</td>
+                <td>{{$repair->application->car->defect->title}}</td>
 
-                <td>{{$repair->car->modelcar->brand->title. ' '.$repair->car->modelcar->title}}</td>
-                <td>{{$repair->car->num}}</td>
+                <td>{{$repair->application->car->modelcar->brand->title. ' '.$repair->application->car->modelcar->title}}</td>
+                <td>{{$repair->application->car->num}}</td>
                 <td>{{$repair->worker->surname. ' '.$repair->worker->firstName. ' '.$repair->worker->patronymic}}</td>
-                <td>{{$repair->client->surname. ' '.$repair->client->firstName. ' '.$repair->client->patronymic}}</td>
+                <td>{{$repair->application->client->surname. ' '.$repair->application->client->firstName. ' '.$repair->application->client->patronymic}}</td>
                 <td>{{$repair->park->title}}</td>
                 <td>{{$repair->service->title}}</td>
-                <td></td>
+                <td>{{$repair->service->time}}</td>
                 <td class="text-center">
                     <a class="btn btn-success" href="/client/edit/{{$repair->id}}" title="Изменить...">
                         <i class="bi bi-pencil"></i>

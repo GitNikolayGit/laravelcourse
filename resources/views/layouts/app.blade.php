@@ -20,7 +20,7 @@
 
 <main class="col-sm p-1 ">
     <div class="container-fluid row">
-        <div class="col-2 p-1 bg-light ">
+        <div class="col-sm-2 p-1 bg-light ">
             @yield('content')
         </div>
         <div class="col-sm-10 bg-light">

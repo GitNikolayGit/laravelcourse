@@ -10,6 +10,7 @@ use App\Models\Car;
 use App\Models\Color;
 use App\Models\Defect;
 use App\Models\Modelcar;
+use App\Models\Repair;
 use Illuminate\Http\Request;
 use App\Http\Requests\CarRequest;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +19,7 @@ class CarController extends Controller
 {
     // машины в ремонте
     public function index(){
-        return view('car.index', ['cars'=>Car::with(['modelcar', 'color', 'defect'])->get()]);
+        return view('car.index', ['cars'=>Repair::all()->groupBy('application_id')]);//['cars'=>Car::with(['modelcar', 'color', 'defect'])->get()]);
     }
     // окно редактирования машины
     public function edit(int $id){
@@ -83,10 +84,8 @@ class CarController extends Controller
         }
     }
 
-    // выборка по модели
-    public function sort_model(Request $req){
-        return view('car.index', ['cars' => Car::all()
-            ->where('modelcar_id', $req->input('model'))]);
-
+    // выборка все авто
+    public function all(){
+        return view('car.index', ['cars' => Repair::withTrashed()->get()->groupBy('application_id')]);
     }
 }

@@ -17,21 +17,23 @@
                 <div id="collapseOn" class="collapse show" data-bs-parent="#accordion">
                     <div class="card-body">
                         <div  >
-                            <a class="btn btn btn btn-outline-success w-100  " href="/repair">все ремонты</a>
+                            <a class="btn btn btn btn-outline-success w-100  " href="/repair">текущие</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div  >
+                            <a class="btn btn btn btn-outline-success w-100  " href="/repair/select_all">все</a>
                         </div>
                     </div>
                     <div class="card-body">
                         <form class="p3 bg-light text-center w-100" action="/repair/select_num" method="post">
                             @csrf
+
                             <div class="mb-1">
-                                <label for="appl">По номеру заявки</label>
-                                <select required class="form-control" id="appl" name="appl">
-                                    <option></option>
-                                    @foreach(\App\Models\Application::all() as $dir)
-                                        <option value="{{$dir->id}}">{{$dir->id}}</option>
-                                    @endforeach
-                                </select>
+                                <label for="appl">Номер заявки</label>
+                                <input type="number" id="appl" name="appl" class="form-control"/>
                             </div>
+
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-outline-success w-100">Выбрать</button>
                             </div>
@@ -61,7 +63,8 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($repairs as $repair)
+
+        @foreach($repairs->sortByDesc('id') as $repair)
             <tr>
                 <td>{{$repair->application->id}}</td>
                 <td>{{$repair->application->car->defect->title}}</td>
@@ -74,8 +77,9 @@
                 <td>{{$repair->service->title}}</td>
                 <td>{{$repair->service->time}}</td>
                 <td class="text-center">
-                    <a class="btn btn-success" href="/client/edit/{{$repair->id}}" title="Изменить...">
-                        <i class="bi bi-pencil"></i>
+                    <a class="btn btn-success <?php if($repair->deleted_at <> null) echo "disabled"; ?>"  href="/repair/create/{{$repair->application->id}}" title="Добавить ремонт...">
+
+                        <i class="bi bi-plus-circle"></i>
                     </a>
                 </td>
             </tr>

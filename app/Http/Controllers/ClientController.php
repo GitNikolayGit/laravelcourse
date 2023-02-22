@@ -35,14 +35,11 @@ class ClientController extends Controller
         return redirect()->action([ClientController::class, 'index'])
             ->with('success', "Был отредактирован клиент ");
     }
-
-    public function update(Request $request, Client $client)
+    // выбирает по паспорту
+    public function find_passport(Request $req)
     {
-        //
+        $clients = Client::where('passport', $req->input('passport'))->get();
+        return view('client.index', ['clients' => $clients]);
     }
 
-    public function destroy(Client $client)
-    {
-        //
-    }
 }

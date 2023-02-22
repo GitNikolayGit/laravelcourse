@@ -5,7 +5,35 @@
 @endsection
 
 @section('content')
+    <div class=" m-1 p-1">
+        <div id="accordion">
 
+            <div class="card">
+                <div class="card-header">
+                    <a class="btn w-100" data-bs-toggle="collapse" href="#collapseOn">
+                        Поиск
+                    </a>
+                </div>
+                <div id="collapseOn" class="collapse show" data-bs-parent="#accordion">
+
+                    <div class="card-body">
+                        <form class="p3 bg-light text-center w-100" action="/client/find_passport" method="post">
+                            @csrf
+
+                            <div class="mb-1">
+                                <label for="passport">По паспорту</label>
+                                <input type="text" id="passport" name="passport" class="form-control"/>
+                            </div>
+
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-outline-success w-100">Выбрать</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('content2')

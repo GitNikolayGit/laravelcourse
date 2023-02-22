@@ -39,15 +39,21 @@ class RepairController extends Controller
         $repair->save();
         return redirect()->back();
     }
-    // выборка по номеру машины
+    // выборка по номеру заявки
     public function select_num(Request $req){
-        $repairs = Repair::where('application_id', $req->input('appl'))->get();
+        $repairs = Repair::withTrashed()->where('application_id', $req->input('appl'))->get();
+        return view('repair.index', ['repairs' =>  $repairs]);
+    }
+    // выборка удаленных заявок
+    public function select_all(){
+        $repairs = Repair::withTrashed()->get();;
         return view('repair.index', ['repairs' =>  $repairs]);
     }
 
     // справка о приеме
     public function reception(int $id){
         $repairs = Repair::where('application_id', $id)->get();
+        if ($repairs->count() == 0) return back()->with('success', "заявке не назначен ремонт");
         $time = new Carbon($repairs->first()->application->created_at);
         foreach ($repairs as $rep){
             $str = explode(':', $rep->service->time);
@@ -59,6 +65,8 @@ class RepairController extends Controller
     // справка о выдачи
     public function reception_return(int $id){
         $repairs = Repair::where('application_id', $id)->get();
+
+        if ($repairs->count() == 0) return back()->with('success', "заявке не назначен ремонт");
         $service = [];
         $service_price = 0;
         $park = [];
@@ -69,6 +77,9 @@ class RepairController extends Controller
             $service_price += $rep->service->price;
             $park[$rep->park->title] = $rep->park->price;
             $price += $rep->service->price + $rep->park->price;
+        }
+        foreach (Repair::where('application_id', $id)->get() as $rep){
+            $rep->delete();
         }
         return view('repair.reception_return',
             ['repairs'=>$repairs, 'service'=>$service, 'park'=>$park, 'price'=>$price]);

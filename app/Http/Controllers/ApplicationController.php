@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 class ApplicationController extends Controller
 {
     public function index(){
-        return view('application.index', ['applications'=>Application::all()]);
+        return view('application.index', ['applications'=>Repair::all()->groupBy('application_id') ]);
     }
 
     public function create(){
@@ -22,6 +22,7 @@ class ApplicationController extends Controller
     }
 
     public function create_res(ApplicationRequest $req){
+
         // клиент
         $temp = DB::table('clients')->where('passport', $req->input('passport'))->value('id');
         if ($temp == null) {
@@ -62,5 +63,9 @@ class ApplicationController extends Controller
 
         return redirect()->action([ApplicationController::class, 'index'])
             ->with('success', "Была добавлена заявка");
+    }
+    // выбрать все заявки
+    public function select_all(){
+        return view('application.index', ['applications' => Repair::withTrashed()->get()->groupBy('application_id')]);
     }
 }

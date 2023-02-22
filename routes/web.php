@@ -23,11 +23,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [CarController::class, 'index'] );
 // редакция машины
 Route::get('/car/edit/{id}', [CarController::class, 'edit']);
-Route::post('car/edit/{id}', [CarController::class, 'edit_res']);
+Route::post('/car/edit/{id}', [CarController::class, 'edit_res']);
 // добавление машины
-Route::post('car/create', [CarController::class, 'create']);
+Route::post('/car/create', [CarController::class, 'create']);
 //
-Route::post('/car/sort_model', [CarController::class, 'sort_model']);
+Route::get('/all', [CarController::class, 'all']);
 
 
 // добавление цвета
@@ -42,6 +42,8 @@ Route::get('/client', [ClientController::class, 'index']);
 // редактировать
 Route::get('/client/edit/{id}', [ClientController::class, 'edit']);
 Route::post('/client/edit/{id}', [ClientController::class, 'edit_res']);
+// поиск по паспорту
+Route::post('/client/find_passport', [ClientController::class, 'find_passport']);
 
 // добавить клиента
 Route::post('/client/create', [ClientController::class, 'create']);
@@ -56,6 +58,7 @@ Route::post('/repair/reception/{id}', [RepairController::class, 'reception']);
 Route::post('/repair/reception_return/{id}', [RepairController::class, 'reception_return']);
 // выборка
 Route::post('/repair/select_num', [RepairController::class, 'select_num']);
+Route::get('/repair/select_all', [RepairController::class, 'select_all']);
 
 // работники
 Route::get('/worker', [WorkerController::class, 'index']);
@@ -90,3 +93,24 @@ Route::get('/application', [ApplicationController::class, 'index']);
 // добавление
 Route::get('/application/create', [ApplicationController::class, 'create']);
 Route::post('/application/create', [ApplicationController::class, 'create_res']);
+// выборка
+Route::get('/application/select_actual', [ApplicationController::class, 'index']);
+Route::get('/application/select_all', [ApplicationController::class, 'select_all']);
+
+// статистика
+Route::get('/statistics', [\App\Http\Controllers\StatisticController::class, 'index']);
+// поиск клиента по номеру авто
+Route::post('/statistic/query', [\App\Http\Controllers\StatisticController::class, 'query']);
+// 2.	Марка и год выпуска автомобиля данного владельца
+Route::post('/repair/query2', [\App\Http\Controllers\StatisticController::class, 'query2']);
+// 3.	Перечень устраненных неисправностей в автомобиле данного владельца
+Route::post('/repair/query3', [\App\Http\Controllers\StatisticController::class, 'query3']);
+// 4.	Фамилия, имя, отчество работника станции, устранявшего данную
+// неисправность в автомобиле данного клиента, и время ее устранения
+Route::post('/repair/query4', [\App\Http\Controllers\StatisticController::class, 'query4']);
+// 5.	Фамилия, имя, отчество клиентов, сдавших в ремонт автомобили с указанным типом неисправности
+Route::post('/repair/query5', [\App\Http\Controllers\StatisticController::class, 'query5']);
+// 6.	Самая распространенная неисправность в автомобилях указанной марки
+Route::post('/repair/query6', [\App\Http\Controllers\StatisticController::class, 'query6']);
+// 7.	Количество рабочих каждой специальности на станции
+Route::get('/statistic/query7', [\App\Http\Controllers\StatisticController::class, 'query7']);

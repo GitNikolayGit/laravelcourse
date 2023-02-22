@@ -66,7 +66,7 @@
                     <form class="p3 bg-light text-center w-100" action="/repair/reception/{{$applications->id}}" method="post">
                         @csrf
                         <div class="mt-3">
-                            <button type="submit" class="btn btn-outline-success w-100">Прием</button>
+                            <button type="submit" class="btn btn-outline-success w-100" >Прием</button>
                         </div>
                     </form>
                 </div>
@@ -92,16 +92,12 @@
                 <tr>
                     <td><img style="height: 80px" src="{{asset(file_exists("storage/images/avto/".$applications->car->modelcar->brand_id.$applications->car->modelcar_id.".jpg")
                   ? "storage/images/avto/".$applications->car->modelcar->brand_id.$applications->car->modelcar_id.".jpg" : "storage/images/avto/noo.jpg")}}" alt="фото машины"></td>
-                    <td><b>год выпуска:</b> {{$applications->car->date}}</td>
-                    <td><b>номер:</b> {{$applications->car->num}}</td>
-                    <td><b>модель:</b> {{$applications->car->modelcar->brand->title. ' '.$applications->car->modelcar->title}}</td>
+                    <td>год выпуска: <b>{{$applications->car->date}}</b></td>
+                    <td>номер: <b>{{$applications->car->num}}</b></td>
+                    <td>модель: <b>{{$applications->car->modelcar->brand->title. ' '.$applications->car->modelcar->title}}</b></td>
 
-                    <td><b>неисправность:</b> {{$applications->car->defect->title}}</td>
-                    <td class="text-center">
-                        <a class="btn btn-outline-success" href="/car/edit/{{$applications->car->id}}" title="Изменить...">
-                            <i class="bi bi-pencil"></i>
-                        </a>
-                    </td>
+                    <td>неисправность: <b>{{$applications->car->defect->title}}</b></td>
+
                 </tr>
             </tbody>
         </table>

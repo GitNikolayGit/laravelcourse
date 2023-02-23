@@ -120,3 +120,6 @@ Route::get('/statistic/query_count_car', [\App\Http\Controllers\StatisticControl
 Route::get('/statistic/query9', [\App\Http\Controllers\StatisticController::class, 'query9']);
 // выдача месячного отчета
 Route::get('/statistic/query10', [\App\Http\Controllers\StatisticController::class, 'query10']);
+
+// презентация
+Route::get('/presentation', function (){ return view('presentation');});

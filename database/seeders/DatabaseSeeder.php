@@ -259,10 +259,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('brands')->insert([
-            ['title'=>'Audi'],['title'=>'Cadillac'], ['title'=>'Bentley'],
-            ['title'=>'Chevrolet'], ['title'=>'Citroen'], ['title'=>'Ferrari'],
-            ['title'=>'Fiat'], ['title'=>'Honda'],
-            ['title'=>'Ford'], ['title'=>'Lada'],
+            ['title'=>'Audi'],
+            ['title'=>'Cadillac'],
+            ['title'=>'Bentley'],
+            ['title'=>'Chevrolet'],
+            ['title'=>'Citroen'],
+            ['title'=>'Ferrari'],
+            ['title'=>'Fiat'],
+            ['title'=>'Honda'],
+            ['title'=>'Ford'],
+            ['title'=>'Lada'],
         ]);
 
         DB::table('modelcars')->insert([
@@ -645,11 +651,51 @@ class DatabaseSeeder extends Seeder
                 'defect_id'=>1
             ],
         ]);
+
         DB::table('applications')->insert([
-            'client_id'=>1,
-            'car_id'=>1,
-            'date_start'=>'2022-03-11',
-            'created_at'=>'2022-03-11 13:28:00'
+            [
+                'client_id'=>1,
+                'car_id'=>1,
+                'date_start'=>now('Europe/Moscow')->subDays(18),
+                'created_at'=>now('Europe/Moscow')->subDays(18)
+            ],
+            [
+                'client_id'=>2,
+                'car_id'=>2,
+                'date_start'=>now('Europe/Moscow')->subDays(17),
+                'created_at'=>now('Europe/Moscow')->subDays(17)
+            ],
+            [
+                'client_id'=>3,
+                'car_id'=>3,
+                'date_start'=>now('Europe/Moscow')->subDays(12),
+                'created_at'=>now('Europe/Moscow')->subDays(12)
+            ],
+            [
+                'client_id'=>4,
+                'car_id'=>4,
+                'date_start'=>now('Europe/Moscow')->subDays(10),
+                'created_at'=>now('Europe/Moscow')->subDays(10)
+            ],
+            [
+                'client_id'=>5,
+                'car_id'=>5,
+                'date_start'=>now('Europe/Moscow')->subDays(8),
+                'created_at'=>now('Europe/Moscow')->subDays(8)
+            ],
+            [
+                'client_id'=>6,
+                'car_id'=>6,
+                'date_start'=>now('Europe/Moscow'),
+                'created_at'=>now('Europe/Moscow')
+            ],
+            [
+                'client_id'=>7,
+                'car_id'=>7,
+                'date_start'=>now('Europe/Moscow'),
+                'created_at'=>now('Europe/Moscow')
+            ],
+
         ]);
 
         DB::table('repairs')->insert([
@@ -658,7 +704,64 @@ class DatabaseSeeder extends Seeder
                 'service_id'=>1,
                 'worker_id'=>3,
                 'park_id'=>1,
-                'time_work'=>1,
+                'created_at'=>now('Europe/Moscow')->subDays(18),
+                'deleted_at'=>now('Europe/Moscow')->subDays(17),
+                //'time_work'=>1,
+            ],
+            [
+                'application_id'=>2,        // оказанная услуга
+                'service_id'=>12,
+                'worker_id'=>2,
+                'park_id'=>15,
+                'created_at'=>now('Europe/Moscow')->subDays(17),
+                'deleted_at'=>now('Europe/Moscow')->subDays(16)
+                //'time_work'=>1,
+            ],
+            [
+                'application_id'=>3,        // оказанная услуга
+                'service_id'=>26,
+                'worker_id'=>6,
+                'park_id'=>2,
+                'created_at'=>now('Europe/Moscow')->subDays(12),
+                'deleted_at'=>now('Europe/Moscow')->subDays(11),
+                //'park_id'=>1,
+                //'time_work'=>1,
+            ],
+            [
+                'application_id'=>4,        // оказанная услуга
+                'service_id'=>1,
+                'worker_id'=>3,
+                'park_id'=>1,
+                'created_at'=>now('Europe/Moscow')->subDays(10),
+                'deleted_at'=>now('Europe/Moscow')->subDays(9),
+                //'time_work'=>1,
+            ],
+            [
+                'application_id'=>5,        // оказанная услуга
+                'service_id'=>35,
+                'worker_id'=>7,
+                'park_id'=>5,
+                'created_at'=>now('Europe/Moscow')->subDays(8),
+                'deleted_at'=>now('Europe/Moscow')->subDays(37),
+                //'time_work'=>1,
+            ],
+            [
+                'application_id'=>6,        // оказанная услуга
+                'service_id'=>35,
+                'worker_id'=>7,
+                'park_id'=>5,
+                'created_at'=>now('Europe/Moscow'),
+                'deleted_at'=>null,
+                //'time_work'=>1,
+            ],
+            [
+                'application_id'=>7,        // оказанная услуга
+                'service_id'=>1,
+                'worker_id'=>3,
+                'park_id'=>1,
+                'created_at'=>now('Europe/Moscow'),
+                'deleted_at'=>null,
+                //'time_work'=>1,
             ]
         ]);
     }

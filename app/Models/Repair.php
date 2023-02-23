@@ -16,8 +16,9 @@ class Repair extends Model
         'service_id',        // оказанная услуга
         'worker_id',         // работник
         'park_id',           // запчасть
-        'price',
-        'time_work',        // время работы
+
+        //'price',
+        //'time_work',        // время работы
     ];
     // связь с заявкой
     public function application(){

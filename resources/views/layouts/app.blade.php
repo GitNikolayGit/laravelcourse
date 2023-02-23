@@ -38,18 +38,9 @@
     <a class="btn btn btn btn-secondary m-3" href="/park">Запчасти</a>
     <a class="btn btn btn btn-secondary m-3" href="/service">Сервис</a>
     <a class="btn btn btn btn-secondary m-3" href="/statistics">Статистика</a>
-    <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">найти</button>
+    <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">Разработка</button>
     <ul class="dropdown-menu" style="width:195px">
-        <li><a class="dropdown-item" id="startArr">исходный массива </a></li>
-        <li><a class="dropdown-item" id="sortCity">по пунктам назначения</a></li>
-        <li><a class="dropdown-item" id="sortPrice">по стоимости</a></li>
-        <li><a class="dropdown-item" id="sortNumber">по номеру рейса</a></li>
-    </ul>
-    <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">выделить</button>
-    <ul class="dropdown-menu" style="width:250px">
-        <li><a class="dropdown-item" id="selectPrice">со стоимостью выше значения</a></li>
-        <li><a class="dropdown-item" id="selectCity">по пункту назначения</a></li>
-        <li><a class="dropdown-item" id="selectNumber">по номеру рейса</a></li>
+        <li><a class="dropdown-item" href="/presentation">презентация</a></li>
     </ul>
 </div>
 </body>

@@ -5,8 +5,52 @@
 @endsection
 
 @section('content')
+        <div class="col-sm">
+            <div id="accordion2">
+                <div class="card">
+                    <div class="card-header">
+                        <a class="btn w-100" data-bs-toggle="collapse" href="#collapseOne">
+                            <h6>Количество рабочих</h6>
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse show" data-bs-parent="#accordion2">
+                        <div class="card-body">
+                            <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/statistic/query7">Показать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed btn w-100" data-bs-toggle="collapse" href="#collapseTwo">
+                            <h6>Справки</h6>
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="collapse" data-bs-parent="#accordion2">
+                        <div class="card-body">
+                            количество автомобилей в ремонте
+                            <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/statistic/query_count_car">Выдать</a>
+                        </div>
 
-    <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/statistic/query7"><h6>Количество рабочих</h6></a>
+                        <div class="card-body">
+                            количество незанятых рабочих на текущий момент
+                            <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/statistic/query9">Выдать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed btn w-100" data-bs-toggle="collapse" href="#collapseThree">
+                            <h6>Месячный отчет</h6>
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="collapse" data-bs-parent="#accordion2">
+                        <div class="card-body">
+                            <a class="btn btn btn btn-outline-secondary w-100 m-1" href="/statistic/query10">Выдать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 @endsection
 

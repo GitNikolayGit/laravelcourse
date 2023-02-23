@@ -105,7 +105,9 @@
     <hr>
     <h6>Ремонт</h6>
     <table style="height: 350px">
+
     @foreach(\App\Models\Repair::all()->where('application_id', $applications->id) as $rep)
+
             <tr>
                 <td>Работник: <b>{{$rep->worker->surname.' '.$rep->worker->firtName.' '.$rep->worker->patronymic}}</b></td>
             </tr>

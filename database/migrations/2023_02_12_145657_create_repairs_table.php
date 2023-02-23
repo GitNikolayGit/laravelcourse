@@ -17,8 +17,8 @@ return new class extends Migration
         Schema::create('repairs', function (Blueprint $table) {
             $table->id();
             $table->integer('application_id');
-            $table->integer('service_id');
-            $table->integer('worker_id');
+            $table->integer('service_id')->nullable();
+            $table->integer('worker_id')->nullable();
             $table->integer('park_id')->nullable();
             $table->integer('price')->nullable();
             $table->double('time_work')->nullable();

@@ -31,6 +31,7 @@
         <tbody>
         @foreach($applications->sortByDesc('id') as $appl)
 
+
             <tr>
                 <td>{{$appl[0]->application->id}}</td>
                 <td><img style="height: 80px" src="{{asset(file_exists("storage/images/avto/".$appl[0]->application->car->modelcar->brand_id.$appl[0]->application->car->modelcar_id.".jpg")
@@ -45,7 +46,7 @@
                 <td>{{$appl[0]->application->date_start}}</td>
 
                 <td class="text-center">
-                    <a class="btn btn-outline-success <?php if($appl[0]->deleted_at <> null) echo "disabled"; ?>" href="/repair/create/{{$appl[0]->id}}" title="Ремонт добавить">
+                    <a class="btn btn-outline-success <?php if($appl[0]->deleted_at <> null) echo "disabled"; ?>"  href="/repair/create/{{$appl[0]->application->id}}" title="Ремонт добавить">
                         ремонт
                     </a>
                 </td>

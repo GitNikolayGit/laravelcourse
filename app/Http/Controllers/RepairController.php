@@ -25,10 +25,19 @@ class RepairController extends Controller
     {
         return view('repair.index', ['repairs'=>Repair::all()]);
     }
-    // оформление заявки
-    public function create(int $id)
+    // создание ремонта
+    public function create($id = null)
     {
-        return view('repair.create', ['applications' => Application::find($id)]);
+        $appl = null;
+        if ($id == null){
+            $appl = Application::all()->last();
+        }
+        else{
+            $appl = Application::find($id);
+        }
+
+
+        return view('repair.create', ['applications' => $appl]);
     }
     public function create_res(Request $req, int $id ){
         $repair = new Repair();

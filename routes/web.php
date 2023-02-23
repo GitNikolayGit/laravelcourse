@@ -51,7 +51,7 @@ Route::post('/client/create', [ClientController::class, 'create']);
 // ремонт
 Route::get('/repair', [RepairController::class, 'index']);
 // заявки
-Route::get('/repair/create/{id}', [RepairController::class, 'create']);
+Route::get('/repair/create/{id?}', [RepairController::class, 'create']);
 Route::post('/repair/create/{id}', [RepairController::class, 'create_res']);
 // выдача справки
 Route::post('/repair/reception/{id}', [RepairController::class, 'reception']);
@@ -114,3 +114,9 @@ Route::post('/repair/query5', [\App\Http\Controllers\StatisticController::class,
 Route::post('/repair/query6', [\App\Http\Controllers\StatisticController::class, 'query6']);
 // 7.	Количество рабочих каждой специальности на станции
 Route::get('/statistic/query7', [\App\Http\Controllers\StatisticController::class, 'query7']);
+// справки о количестве автомобилей в ремонте на текущий момент
+Route::get('/statistic/query_count_car', [\App\Http\Controllers\StatisticController::class, 'query_count_car']);
+// количество незанятых рабочих на текущий момент
+Route::get('/statistic/query9', [\App\Http\Controllers\StatisticController::class, 'query9']);
+// выдача месячного отчета
+Route::get('/statistic/query10', [\App\Http\Controllers\StatisticController::class, 'query10']);

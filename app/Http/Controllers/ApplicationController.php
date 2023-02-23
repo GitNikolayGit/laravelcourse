@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\DB;
 class ApplicationController extends Controller
 {
     public function index(){
-        return view('application.index', ['applications'=>Repair::all()->groupBy('application_id') ]);
+        //return view('application.index', ['applications'=>Repair::all()->groupBy('application_id') ]);
+        return view('application.index', ['applications'=>Repair::all()->groupBy('application_id')]);
     }
 
     public function create(){
@@ -39,9 +40,9 @@ class ApplicationController extends Controller
                 $id = DB::table('clients')->where('passport', $req->input('passport'))->value('id');
                 $file->storePubliclyAs('public/images/person', $id.'.jpg');
             }
-            else {
-                $file->storePubliclyAs('public/images/person','noo.jpg');
-            }
+            //else {
+           //     $file->storePubliclyAs('public/images/person','noo.jpg');
+           // }
         }
         // машина
         $car = new Car();
@@ -60,9 +61,9 @@ class ApplicationController extends Controller
             ->where('passport', $req->input('passport'))->value('id');;
         $appl->date_start = now('Europe/Moscow');
         $appl->save();
-
-        return redirect()->action([ApplicationController::class, 'index'])
-            ->with('success', "Была добавлена заявка");
+        return redirect()->action([RepairController::class, 'create']);
+       // return redirect()->action([ApplicationController::class, 'index'])
+       //     ->with('success', "Была добавлена заявка");
     }
     // выбрать все заявки
     public function select_all(){

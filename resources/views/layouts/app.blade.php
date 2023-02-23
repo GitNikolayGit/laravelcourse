@@ -41,6 +41,7 @@
     <button class="btn btn-outline-secondary m-3" data-bs-toggle="dropdown" style="width:110px">Разработка</button>
     <ul class="dropdown-menu" style="width:195px">
         <li><a class="dropdown-item" href="/presentation">презентация</a></li>
+        <li><a class="dropdown-item" href="/diagram">Диаграмма</a></li>
     </ul>
 </div>
 </body>

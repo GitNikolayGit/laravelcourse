@@ -123,3 +123,5 @@ Route::get('/statistic/query10', [\App\Http\Controllers\StatisticController::cla
 
 // презентация
 Route::get('/presentation', function (){ return view('presentation');});
+// диаграмма
+Route::get('/diagram', function (){ return view('diagram');});
